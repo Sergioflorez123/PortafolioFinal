@@ -8,6 +8,7 @@ export default function Navigation() {
   const navItems = [
     { name: 'Inicio', href: '#inicio' },
     { name: 'Sobre mí', href: '#sobre-mi' },
+    { name: 'CV', href: '#cv' },
     { name: 'Proyectos', href: '#proyectos' },
     { name: 'Testimonios', href: '#testimonios' },
     { name: 'Contacto', href: '#contacto' },
