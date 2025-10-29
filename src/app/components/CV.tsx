@@ -58,9 +58,6 @@ export default function CV() {
                       <span className="text-purple-400">▹</span> JavaScript (React)
                     </li>
                     <li className="flex items-center gap-2">
-                      <span className="text-purple-400">▹</span> Java
-                    </li>
-                    <li className="flex items-center gap-2">
                       <span className="text-purple-400">▹</span> Python
                     </li>
                     <li className="flex items-center gap-2">
@@ -305,10 +302,6 @@ export default function CV() {
             {activeSection === 'certifications' && (
               <div className="mt-8 space-y-4 animate-fade-in">
                 <div className="border-l-4 border-purple-400 pl-6 space-y-1">
-                  <h4 className="text-xl font-semibold text-purple-400">Certificado en JavaScript</h4>
-                  <p className="text-gray-400 font-mono">freeCodeCamp | 2022</p>
-                </div>
-                <div className="border-l-4 border-purple-400 pl-6 space-y-1">
                   <h4 className="text-xl font-semibold text-purple-400">Desarrollo de Aplicaciones Web con React</h4>
                   <p className="text-gray-400 font-mono">Coursera | 2023</p>
                 </div>
@@ -320,46 +313,6 @@ export default function CV() {
             )}
           </div>
 
-          {/* Logros */}
-          <div className="border border-purple-500/30 rounded-lg p-8 bg-black/40 backdrop-blur-sm" style={{
-            boxShadow: '0 4px 20px rgba(168, 85, 247, 0.2)'
-          }}>
-            <button
-              onClick={() => toggleSection('achievements')}
-              className="w-full flex items-center justify-between"
-            >
-              <h3 className="text-3xl font-bold text-white font-mono uppercase tracking-wider" style={{
-                textShadow: '0 0 15px #a855f7'
-              }}>
-                Otros Logros
-              </h3>
-              <svg
-                className={`w-6 h-6 text-purple-400 transition-transform duration-300 ${activeSection === 'achievements' ? 'rotate-180' : ''}`}
-                fill="none"
-                stroke="currentColor"
-                viewBox="0 0 24 24"
-              >
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
-              </svg>
-            </button>
-
-            {activeSection === 'achievements' && (
-              <div className="mt-8 space-y-3 animate-fade-in">
-                <p className="text-gray-300 flex items-start gap-2">
-                  <span className="text-purple-400 mt-1">▹</span>
-                  Participante en hackathons locales de desarrollo de software.
-                </p>
-                <p className="text-gray-300 flex items-start gap-2">
-                  <span className="text-purple-400 mt-1">▹</span>
-                  Mi proyecto de gestión de tareas fue seleccionado como uno de los mejores en el curso de desarrollo web.
-                </p>
-                <p className="text-gray-300 flex items-start gap-2">
-                  <span className="text-purple-400 mt-1">▹</span>
-                  Contribución a proyectos open-source en GitHub, colaborando en la mejora de pequeños scripts y aplicaciones.
-                </p>
-              </div>
-            )}
-          </div>
         </div>
       </div>
     </section>

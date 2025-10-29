@@ -74,3 +74,33 @@ body {
 .animate-fade-in {
   animation: fade-in 0.8s ease-out;
 }
+
+.keycap {
+  border-radius: 12px;
+  width: 100%;
+  aspect-ratio: 1;
+  position: relative;
+  border: none;
+}
+
+.isometric-3d {
+  perspective: 1000px;
+  transform-style: preserve-3d;
+  box-shadow: 
+    0 10px 20px rgba(0, 0, 0, 0.3),
+    0 0 0 1px rgba(255, 255, 255, 0.1),
+    inset 0 1px 0 rgba(255, 255, 255, 0.2);
+}
+
+.keycap-wrapper {
+  perspective: 1000px;
+}
+
+@keyframes keycap-hover {
+  0% {
+    transform: rotateX(0deg) translateY(0px);
+  }
+  100% {
+    transform: rotateX(12deg) translateY(-8px) translateZ(10px);
+  }
+}

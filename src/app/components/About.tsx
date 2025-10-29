@@ -2,12 +2,16 @@
 
 export default function About() {
   const skills = [
-    { name: 'Python', icon: '🐍', color: 'from-yellow-500 to-amber-600' },
-    { name: 'Java', icon: '☕', color: 'from-red-500 to-orange-600' },
-    { name: 'SQL', icon: '💾', color: 'from-cyan-500 to-blue-600' },
-    { name: 'Angular', icon: '🅰️', color: 'from-red-500 to-pink-600' },
-    { name: 'GitHub', icon: '🐙', color: 'from-gray-600 to-gray-800' },
-    { name: 'React', icon: '⚛️', color: 'from-blue-400 to-cyan-500' },
+    { name: 'Python', icon: '🐍', color: 'from-yellow-500 to-amber-600', bgColor: '#fbbf24' },
+    { name: 'Java', icon: '☕', color: 'from-red-500 to-orange-600', bgColor: '#dc2626' },
+    { name: 'SQL', icon: '💾', color: 'from-cyan-500 to-blue-600', bgColor: '#06b6d4' },
+    { name: 'Angular', icon: '🅰️', color: 'from-red-500 to-pink-600', bgColor: '#ef4444' },
+    { name: 'GitHub', icon: '🐙', color: 'from-gray-600 to-gray-800', bgColor: '#1f2937' },
+    { name: 'React', icon: '⚛️', color: 'from-blue-400 to-cyan-500', bgColor: '#0891b2' },
+    { name: 'JavaScript', icon: '△', color: 'from-yellow-400 to-yellow-600', bgColor: '#facc15' },
+    { name: 'Node.js', icon: '⬢', color: 'from-green-500 to-green-700', bgColor: '#22c55e' },
+    { name: 'MySQL', icon: '🐬', color: 'from-blue-500 to-blue-700', bgColor: '#2563eb' },
+    { name: 'MongoDB', icon: '🍃', color: 'from-green-600 to-green-800', bgColor: '#16a34a' },
   ];
 
   return (
@@ -37,30 +41,68 @@ export default function About() {
               Habilidades
             </h2>
             
-            <div className="grid grid-cols-2 gap-6">
+            <div className="grid grid-cols-4 sm:grid-cols-5 lg:grid-cols-6 gap-6 perspective-1000">
               {skills.map((skill, index) => (
                 <div
                   key={skill.name}
-                  className="group relative overflow-hidden rounded-lg border-2 border-purple-500/30 bg-black/40 backdrop-blur-sm hover:border-purple-400 transition-all duration-300 hover:-translate-y-1"
+                  className="group relative keycap-wrapper"
                   style={{
-                    boxShadow: '0 4px 6px rgba(168, 85, 247, 0.1)'
+                    transform: `rotateX(${index % 2 === 0 ? '2deg' : '-2deg'}) rotateY(${index % 3 === 0 ? '3deg' : index % 3 === 1 ? '-3deg' : '0deg'})`,
+                    transformStyle: 'preserve-3d'
                   }}
+                  title={skill.name}
                 >
-                  {/* Gradient background on hover */}
-                  <div className={`absolute inset-0 bg-gradient-to-br ${skill.color} opacity-0 group-hover:opacity-20 transition-opacity duration-300`}></div>
-                  
-                  {/* Content */}
-                  <div className="relative p-6 text-center space-y-3">
-                    <div className="text-5xl animate-bounce group-hover:scale-110 transition-transform duration-300">
-                      {skill.icon}
+                  {/* Keycap with isometric 3D effect */}
+                  <div
+                    className="keycap isometric-3d relative cursor-pointer"
+                    style={{
+                      background: skill.bgColor,
+                      transform: 'rotateX(0deg) translateY(0px)',
+                      transition: 'all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1)',
+                      transformStyle: 'preserve-3d'
+                    }}
+                    onMouseEnter={(e) => {
+                      e.currentTarget.style.transform = 'rotateX(12deg) translateY(-8px) translateZ(10px)';
+                      e.currentTarget.style.filter = 'brightness(1.2)';
+                    }}
+                    onMouseLeave={(e) => {
+                      e.currentTarget.style.transform = 'rotateX(0deg) translateY(0px)';
+                      e.currentTarget.style.filter = 'brightness(1)';
+                    }}
+                  >
+                    {/* Top face - Solo logo */}
+                    <div 
+                      className="absolute inset-0 flex items-center justify-center p-2"
+                      style={{
+                        background: skill.bgColor,
+                        zIndex: 3
+                      }}
+                    >
+                      <div className="text-5xl font-bold text-white drop-shadow-lg">
+                        {skill.icon}
+                      </div>
                     </div>
-                    <h3 className="text-white font-semibold text-lg font-mono">{skill.name}</h3>
-                  </div>
 
-                  {/* Glow effect */}
-                  <div className="absolute inset-0 border-2 border-transparent group-hover:border-purple-400/50 rounded-lg transition-all duration-300" style={{
-                    boxShadow: '0 0 20px rgba(168, 85, 247, 0.3)'
-                  }}></div>
+                    {/* Right face - side */}
+                    <div 
+                      className="absolute inset-0"
+                      style={{
+                        background: `linear-gradient(to left, rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.6))`,
+                        clipPath: 'polygon(100% 0, 100% 100%, 85% 100%)',
+                        zIndex: 1
+                      }}
+                    ></div>
+
+                    {/* Bottom face */}
+                    <div 
+                      className="absolute inset-0"
+                      style={{
+                        background: `linear-gradient(to top, rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.2))`,
+                        clipPath: 'polygon(0 100%, 85% 100%, 100% 100%)',
+                        zIndex: 1
+                      }}
+                    ></div>
+                  </div>
                 </div>
               ))}
             </div>
