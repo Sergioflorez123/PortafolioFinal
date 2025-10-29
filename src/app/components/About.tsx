@@ -45,64 +45,93 @@ export default function About() {
               {skills.map((skill, index) => (
                 <div
                   key={skill.name}
-                  className="group relative keycap-wrapper"
+                  className="group relative keycap-container-3d"
                   style={{
-                    transform: `rotateX(${index % 2 === 0 ? '2deg' : '-2deg'}) rotateY(${index % 3 === 0 ? '3deg' : index % 3 === 1 ? '-3deg' : '0deg'})`,
-                    transformStyle: 'preserve-3d'
+                    transform: `perspective(1000px) rotateX(${index % 4 * 2 - 3}deg) rotateY(${index % 3 * 3 - 3}deg)`,
+                    transformStyle: 'preserve-3d',
+                    transition: 'transform 0.5s ease-out'
                   }}
                   title={skill.name}
+                  onMouseMove={(e) => {
+                    const rect = e.currentTarget.getBoundingClientRect();
+                    const x = e.clientX - rect.left;
+                    const y = e.clientY - rect.top;
+                    const centerX = rect.width / 2;
+                    const centerY = rect.height / 2;
+                    const rotateX = (y - centerY) / 5;
+                    const rotateY = (centerX - x) / 5;
+                    e.currentTarget.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) scale(1.1) translateZ(20px)`;
+                  }}
+                  onMouseLeave={(e) => {
+                    e.currentTarget.style.transform = `perspective(1000px) rotateX(${index % 4 * 2 - 3}deg) rotateY(${index % 3 * 3 - 3}deg) scale(1) translateZ(0px)`;
+                  }}
                 >
-                  {/* Keycap with isometric 3D effect */}
-                  <div
-                    className="keycap isometric-3d relative cursor-pointer"
+                  {/* Top face - Logo */}
+                  <div 
+                    className="absolute inset-0 flex items-center justify-center keycap-top"
                     style={{
                       background: skill.bgColor,
-                      transform: 'rotateX(0deg) translateY(0px)',
-                      transition: 'all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1)',
-                      transformStyle: 'preserve-3d'
-                    }}
-                    onMouseEnter={(e) => {
-                      e.currentTarget.style.transform = 'rotateX(12deg) translateY(-8px) translateZ(10px)';
-                      e.currentTarget.style.filter = 'brightness(1.2)';
-                    }}
-                    onMouseLeave={(e) => {
-                      e.currentTarget.style.transform = 'rotateX(0deg) translateY(0px)';
-                      e.currentTarget.style.filter = 'brightness(1)';
+                      transform: 'translateZ(12px)',
+                      clipPath: 'inset(0 round 8px)',
+                      boxShadow: '0 0 20px rgba(0, 0, 0, 0.5), inset 0 1px 0 rgba(255, 255, 255, 0.2)'
                     }}
                   >
-                    {/* Top face - Solo logo */}
-                    <div 
-                      className="absolute inset-0 flex items-center justify-center p-2"
-                      style={{
-                        background: skill.bgColor,
-                        zIndex: 3
-                      }}
-                    >
-                      <div className="text-5xl font-bold text-white drop-shadow-lg">
-                        {skill.icon}
-                      </div>
+                    <div className="text-5xl font-bold text-white drop-shadow-2xl">
+                      {skill.icon}
                     </div>
-
-                    {/* Right face - side */}
-                    <div 
-                      className="absolute inset-0"
-                      style={{
-                        background: `linear-gradient(to left, rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.6))`,
-                        clipPath: 'polygon(100% 0, 100% 100%, 85% 100%)',
-                        zIndex: 1
-                      }}
-                    ></div>
-
-                    {/* Bottom face */}
-                    <div 
-                      className="absolute inset-0"
-                      style={{
-                        background: `linear-gradient(to top, rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.2))`,
-                        clipPath: 'polygon(0 100%, 85% 100%, 100% 100%)',
-                        zIndex: 1
-                      }}
-                    ></div>
                   </div>
+
+                  {/* Right face */}
+                  <div 
+                    className="absolute inset-0 keycap-right"
+                    style={{
+                      background: `linear-gradient(to left, rgba(0, 0, 0, 0.4), ${skill.bgColor})`,
+                      transform: 'rotateY(90deg) translateZ(12px)',
+                      clipPath: 'polygon(0 0, 100% 0, 100% 100%, 0 100%)'
+                    }}
+                  ></div>
+
+                  {/* Left face */}
+                  <div 
+                    className="absolute inset-0 keycap-left"
+                    style={{
+                      background: `linear-gradient(to right, rgba(0, 0, 0, 0.4), ${skill.bgColor})`,
+                      transform: 'rotateY(-90deg) translateZ(12px)',
+                      clipPath: 'polygon(0 0, 100% 0, 100% 100%, 0 100%)'
+                    }}
+                  ></div>
+
+                  {/* Bottom face */}
+                  <div 
+                    className="absolute inset-0 keycap-bottom"
+                    style={{
+                      background: `linear-gradient(to top, rgba(0, 0, 0, 0.5), ${skill.bgColor})`,
+                      transform: 'rotateX(90deg) translateZ(12px)',
+                      clipPath: 'polygon(0 0, 100% 0, 100% 100%, 0 100%)'
+                    }}
+                  ></div>
+
+                  {/* Back face */}
+                  <div 
+                    className="absolute inset-0 keycap-back"
+                    style={{
+                      background: skill.bgColor,
+                      transform: 'translateZ(-12px)',
+                      clipPath: 'inset(0 round 8px)',
+                      opacity: 0.3
+                    }}
+                  ></div>
+
+                  {/* Glow effect */}
+                  <div 
+                    className="absolute inset-0 group-hover:opacity-100 opacity-0 transition-opacity duration-300"
+                    style={{
+                      background: `radial-gradient(circle, ${skill.bgColor}40, transparent 70%)`,
+                      transform: 'translateZ(20px)',
+                      pointerEvents: 'none',
+                      filter: 'blur(20px)'
+                    }}
+                  ></div>
                 </div>
               ))}
             </div>
