@@ -19,15 +19,18 @@ export default function Navigation() {
   ];
 
   return (
-    <nav className="fixed top-0 left-0 right-0 z-40 bg-black/80 backdrop-blur-md border-b border-teal-400/30" style={{
-      boxShadow: '0 2px 30px rgba(20, 184, 166, 0.25)'
+    <nav className="fixed top-0 left-0 right-0 z-40 backdrop-blur-md" style={{
+      background: 'var(--nav-bg)',
+      borderBottom: '1px solid var(--surface-border)',
+      boxShadow: '0 2px 30px rgba(234, 88, 12, 0.25)'
     }}>
       <div className="max-w-7xl mx-auto px-6 lg:px-8">
         <div className="flex items-center justify-between h-16">
           {/* Logo */}
           <div className="flex items-center gap-3">
-            <div className="w-3 h-3 rounded-full bg-teal-400 animate-pulse" style={{
-              boxShadow: '0 0 15px #14b8a6, 0 0 30px #10b981'
+            <div className="w-3 h-3 rounded-full animate-pulse" style={{
+              background: 'var(--accent)',
+              boxShadow: '0 0 15px var(--accent), 0 0 30px var(--accent-strong)'
             }}></div>
             <span className="text-white font-semibold text-lg font-mono tracking-wider" style={{
               textShadow: '0 0 15px #ffffff'
@@ -43,26 +46,17 @@ export default function Navigation() {
                 onClick={() => setActiveSection(item.name)}
                 className={`text-sm font-medium font-mono uppercase tracking-wider transition-all duration-200 ${
                   activeSection === item.name
-                    ? 'text-teal-300'
-                    : 'text-gray-300 hover:text-teal-300'
+                    ? 'text-amber-300'
+                    : 'text-gray-300 hover:text-amber-300'
                 }`}
                 style={activeSection === item.name ? {
-                  textShadow: '0 0 15px #14b8a6, 0 0 25px #10b981',
+                  textShadow: '0 0 15px var(--accent), 0 0 25px var(--accent-strong)',
                   transform: 'scale(1.05)'
                 } : {}}
               >
                 {item.name}
               </a>
             ))}
-
-            {/* Descargar CV (PDF) */}
-            <a
-              href="/cv.pdf"
-              download
-              className="ml-2 inline-flex items-center px-4 py-2 rounded-md border border-teal-300/60 text-teal-300 hover:bg-teal-500/10 transition-colors font-mono text-xs uppercase tracking-wider"
-            >
-              {t('nav.downloadCV')}
-            </a>
           </div>
 
           {/* Controles: Tema e Idioma */}
@@ -70,8 +64,13 @@ export default function Navigation() {
             <button
               aria-label="Toggle theme"
               onClick={toggleTheme}
-              className="inline-flex items-center justify-center w-9 h-9 rounded-md border border-teal-300/50 text-teal-300 hover:bg-teal-500/10 transition"
+              className="inline-flex items-center justify-center w-9 h-9 rounded-md transition"
               title={t('nav.toggleTheme')}
+              style={{
+                color: 'var(--accent)',
+                border: '1px solid var(--surface-border)',
+                background: 'transparent'
+              }}
             >
               {theme === 'dark' ? (
                 <svg className="w-5 h-5" viewBox="0 0 24 24" fill="currentColor"><path d="M21.64 13a9 9 0 01-11.31-11.31A9 9 0 1021.64 13z"/></svg>
@@ -84,10 +83,14 @@ export default function Navigation() {
               aria-label="Cambiar idioma"
               value={lang}
               onChange={(e) => setLang(e.target.value as 'es' | 'en')}
-              className="bg-transparent border border-teal-300/50 text-teal-300 rounded-md px-2 py-1 text-sm font-mono uppercase tracking-wider hover:bg-teal-500/10 transition"
+              className="bg-transparent rounded-md px-2 py-1 text-sm font-mono uppercase tracking-wider transition"
+              style={{
+                color: 'var(--accent)',
+                border: '1px solid var(--surface-border)'
+              }}
             >
-              <option className="bg-black" value="es">ES</option>
-              <option className="bg-black" value="en">EN</option>
+              <option className="bg-black text-white" value="es">ES</option>
+              <option className="bg-black text-white" value="en">EN</option>
             </select>
           </div>
         </div>

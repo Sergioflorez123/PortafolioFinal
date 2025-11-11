@@ -7,9 +7,9 @@ export default function Hero() {
   const { t } = useContext(I18nContext);
   return (
     <section id="inicio" className="pt-32 pb-20 px-6 lg:px-8 relative">
-      {/* Rejilla neon en tonos cian/verde */}
+      {/* Rejilla neon en tonos naranja */}
       <div className="absolute inset-0 opacity-10" style={{
-        backgroundImage: 'linear-gradient(rgba(20, 184, 166, 0.18) 1px, transparent 1px), linear-gradient(90deg, rgba(16, 185, 129, 0.18) 1px, transparent 1px)',
+        backgroundImage: 'linear-gradient(rgba(245, 158, 11, 0.18) 1px, transparent 1px), linear-gradient(90deg, rgba(234, 88, 12, 0.18) 1px, transparent 1px)',
         backgroundSize: '50px 50px'
       }}></div>
 
@@ -19,7 +19,7 @@ export default function Hero() {
           <div className="space-y-8 animate-fade-in">
             <div>
               <h1 className="text-5xl lg:text-6xl font-bold text-white mb-6 leading-tight font-mono uppercase tracking-wider" style={{
-                textShadow: '0 0 20px #14b8a6, 0 0 40px #14b8a6, 0 0 60px #10b981, 0 0 80px #10b981'
+                textShadow: '0 0 20px var(--accent), 0 0 40px var(--accent), 0 0 60px var(--accent-strong), 0 0 80px var(--accent-strong)'
               }}>
                 {t('hero.title')}
               </h1>
@@ -28,28 +28,41 @@ export default function Hero() {
               </p>
             </div>
 
-            {/* Botón CTA con efecto neon cian/verde */}
-            <button className="group relative inline-flex items-center justify-center px-8 py-4 text-base font-semibold text-white font-mono uppercase tracking-wider bg-gradient-to-r from-teal-600 via-emerald-500 to-teal-600 hover:from-teal-500 hover:to-emerald-400 transition-all duration-300 border-2 border-teal-300/70"
-              style={{
-                boxShadow: '0 0 30px #14b8a6, 0 0 50px #10b981, inset 0 0 40px rgba(20, 184, 166, 0.35)'
-              }}>
-              <span className="relative z-10">Ver proyectos</span>
-              <svg
-                className="ml-2 w-5 h-5 transition-transform group-hover:translate-x-1 relative z-10"
-                fill="none"
-                stroke="currentColor"
-                viewBox="0 0 24 24"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth={2}
-                  d="M13 7l5 5m0 0l-5 5m5-5H6"
-                />
-              </svg>
-              {/* Animated glow */}
-              <div className="absolute inset-0 bg-teal-400 opacity-50 blur-xl group-hover:opacity-75 transition-opacity"></div>
-            </button>
+            {/* CTAs: Proyectos + Descargar CV */}
+            <div className="flex flex-wrap gap-4">
+              <a href="#proyectos" className="group relative inline-flex items-center justify-center px-8 py-4 text-base font-semibold text-white font-mono uppercase tracking-wider bg-gradient-to-r from-amber-600 via-orange-500 to-amber-600 hover:from-amber-500 hover:to-orange-400 transition-all duration-300 border-2 border-amber-300/70"
+                style={{
+                  boxShadow: '0 0 30px var(--accent), 0 0 50px var(--accent-strong), inset 0 0 40px rgba(245, 158, 11, 0.35)'
+                }}>
+                <span className="relative z-10">{t('hero.ctaProjects')}</span>
+                <svg
+                  className="ml-2 w-5 h-5 transition-transform group-hover:translate-x-1 relative z-10"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={2}
+                    d="M13 7l5 5m0 0l-5 5m5-5H6"
+                  />
+                </svg>
+                <div className="absolute inset-0 bg-amber-400 opacity-50 blur-xl group-hover:opacity-75 transition-opacity"></div>
+              </a>
+
+              <a href="/cv.pdf" download className="inline-flex items-center justify-center px-8 py-4 text-base font-semibold font-mono uppercase tracking-wider border-2 rounded-md transition-all duration-300"
+                style={{
+                  color: 'var(--accent)',
+                  borderColor: 'var(--surface-border)',
+                  boxShadow: '0 0 15px rgba(245,158,11,0.25)'
+                }}>
+                {t('hero.ctaCV')}
+                <svg className="ml-2 w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                  <path d="M12 16l4-5h-3V4h-2v7H8l4 5zm8 2H4v2h16v-2z" />
+                </svg>
+              </a>
+            </div>
 
             {/* Social Media Buttons */}
             <div className="flex gap-4 pt-4">
@@ -142,52 +155,52 @@ export default function Hero() {
               </a>
             </div>
 
-            {/* Puntos decorativos neon cian/verde */}
+            {/* Puntos decorativos neon naranja */}
             <div className="flex gap-2 pt-4">
-              <div className="w-3 h-3 rounded-full bg-teal-400 animate-pulse" style={{
-                boxShadow: '0 0 15px #14b8a6, 0 0 25px #10b981'
+              <div className="w-3 h-3 rounded-full bg-amber-400 animate-pulse" style={{
+                boxShadow: '0 0 15px var(--accent), 0 0 25px var(--accent-strong)'
               }}></div>
-              <div className="w-3 h-3 rounded-full bg-emerald-500 animate-pulse" style={{
-                boxShadow: '0 0 15px #14b8a6, 0 0 25px #10b981',
+              <div className="w-3 h-3 rounded-full bg-orange-500 animate-pulse" style={{
+                boxShadow: '0 0 15px var(--accent), 0 0 25px var(--accent-strong)',
                 animationDelay: '0.2s'
               }}></div>
-              <div className="w-3 h-3 rounded-full bg-teal-300 animate-pulse" style={{
-                boxShadow: '0 0 15px #14b8a6, 0 0 25px #10b981',
+              <div className="w-3 h-3 rounded-full bg-amber-300 animate-pulse" style={{
+                boxShadow: '0 0 15px var(--accent), 0 0 25px var(--accent-strong)',
                 animationDelay: '0.4s'
               }}></div>
             </div>
           </div>
 
-          {/* Right - Imagen con efecto neon cian/verde */}
+          {/* Right - Imagen con efecto neon naranja */}
           <div className="flex justify-center lg:justify-end">
             <div className="relative group">
               {/* Resplandor exterior */}
-              <div className="absolute -inset-3 bg-gradient-to-r from-teal-300 via-emerald-400 to-teal-300 rounded-full blur-3xl opacity-70 group-hover:opacity-90 transition duration-300 animate-pulse"></div>
+              <div className="absolute -inset-3 bg-gradient-to-r from-amber-300 via-orange-400 to-amber-300 rounded-full blur-3xl opacity-70 group-hover:opacity-90 transition duration-300 animate-pulse"></div>
               
               {/* Círculo interior con borde neon */}
-              <div className="relative w-80 h-80 rounded-full overflow-hidden border-4 border-teal-300/60 bg-gradient-to-br from-teal-800 to-emerald-900 p-2" style={{
-                boxShadow: '0 0 40px #14b8a6, 0 0 70px #10b981, inset 0 0 40px rgba(20, 184, 166, 0.35)'
+              <div className="relative w-80 h-80 rounded-full overflow-hidden border-4 border-amber-300/60 bg-gradient-to-br from-orange-900 to-amber-900 p-2" style={{
+                boxShadow: '0 0 40px var(--accent), 0 0 70px var(--accent-strong), inset 0 0 40px rgba(245, 158, 11, 0.35)'
               }}>
                 {/* Placeholder de imagen */}
-                <div className="w-full h-full rounded-full bg-gradient-to-br from-teal-800 via-teal-700 to-teal-900 flex items-center justify-center">
+                <div className="w-full h-full rounded-full bg-gradient-to-br from-orange-900 via-amber-800 to-orange-950 flex items-center justify-center">
                   <div className="text-6xl font-bold text-white/40 font-mono">S</div>
                 </div>
               </div>
 
               {/* Anillos neon animados */}
-              <div className="absolute inset-0 border-4 border-teal-300/40 rounded-full animate-ping"></div>
-              <div className="absolute inset-0 border-4 border-emerald-400/40 rounded-full animate-pulse"></div>
+              <div className="absolute inset-0 border-4 border-amber-300/40 rounded-full animate-ping"></div>
+              <div className="absolute inset-0 border-4 border-orange-400/40 rounded-full animate-pulse"></div>
             </div>
           </div>
         </div>
       </div>
 
-      {/* Elementos de fondo neon cian/verde */}
-      <div className="absolute bottom-0 left-0 w-64 h-64 rounded-full bg-teal-400/20 blur-3xl animate-pulse" style={{
-        boxShadow: '0 0 150px #14b8a6'
+      {/* Elementos de fondo neon naranja */}
+      <div className="absolute bottom-0 left-0 w-64 h-64 rounded-full bg-amber-400/20 blur-3xl animate-pulse" style={{
+        boxShadow: '0 0 150px var(--accent)'
       }}></div>
-      <div className="absolute top-0 right-0 w-96 h-96 rounded-full bg-emerald-500/15 blur-3xl animate-pulse" style={{
-        boxShadow: '0 0 150px #10b981',
+      <div className="absolute top-0 right-0 w-96 h-96 rounded-full bg-orange-500/15 blur-3xl animate-pulse" style={{
+        boxShadow: '0 0 150px var(--accent-strong)',
         animationDelay: '1s'
       }}></div>
     </section>

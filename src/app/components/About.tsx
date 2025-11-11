@@ -1,6 +1,10 @@
 'use client';
 
+import { useContext } from 'react';
+import { I18nContext } from '../contexts/I18nContext';
+
 export default function About() {
+  const { t } = useContext(I18nContext);
   const skills = [
     { name: 'Python', icon: '🐍', color: 'from-yellow-500 to-amber-600', bgColor: '#fbbf24' },
     { name: 'Java', icon: '☕', color: 'from-red-500 to-orange-600', bgColor: '#dc2626' },
@@ -17,28 +21,28 @@ export default function About() {
   return (
     <section id="sobre-mi" className="py-32 px-6 lg:px-8 relative">
       {/* Background glow effect */}
-      <div className="absolute inset-0 bg-gradient-to-b from-transparent via-purple-900/5 to-transparent"></div>
+      <div className="absolute inset-0" style={{ background: 'linear-gradient(to bottom, transparent, rgba(234,88,12,0.08), transparent)' }}></div>
 
       <div className="max-w-7xl mx-auto">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
           {/* Left side - About text */}
           <div className="space-y-6">
             <h2 className="text-4xl font-bold text-white font-mono uppercase tracking-wider mb-8" style={{
-              textShadow: '0 0 20px #a855f7, 0 0 30px #9333ea'
+              textShadow: '0 0 20px var(--accent), 0 0 30px var(--accent-strong)'
             }}>
-              Sobre mí
+              {t('about.title')}
             </h2>
             <p className="text-lg leading-relaxed text-gray-300">
-              Soy un apasionado desarrollador de software y estudiante de ingeniería con experiencia en el desarrollo de aplicaciones web y móviles. Me especializo en crear soluciones tecnológicas innovadoras que resuelven problemas reales del mundo. Mi enfoque se centra en escribir código limpio, escalable y eficiente, siempre buscando las mejores prácticas en el desarrollo de software. Me gusta trabajar en equipo y estoy constantemente aprendiendo nuevas tecnologías para mantenerme actualizado en este campo tan dinámico. Mi objetivo es contribuir al crecimiento de organizaciones mediante el desarrollo de software de alta calidad.
+              {t('about.text')}
             </p>
           </div>
 
           {/* Right side - Skills */}
           <div className="space-y-6">
             <h2 className="text-4xl font-bold text-white font-mono uppercase tracking-wider mb-8" style={{
-              textShadow: '0 0 20px #a855f7, 0 0 30px #9333ea'
+              textShadow: '0 0 20px var(--accent), 0 0 30px var(--accent-strong)'
             }}>
-              Habilidades
+              {t('about.skills')}
             </h2>
             
             <div className="grid grid-cols-4 sm:grid-cols-5 lg:grid-cols-6 gap-6 perspective-1000">
