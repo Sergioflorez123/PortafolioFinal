@@ -1,7 +1,10 @@
 import Navigation from "./components/Navigation";
 import Hero from "./components/Hero";
 import About from "./components/About";
-import CV from "./components/CV";
+import Projects from "./components/Projects";
+import Testimonials from "./components/Testimonials";
+import Education from "./components/Education";
+import Contact from "./components/Contact";
 
 export default function Home() {
   return (
@@ -9,7 +12,10 @@ export default function Home() {
       <Navigation />
       <Hero />
       <About />
-      <CV />
+      <Projects />
+      <Testimonials />
+      <Education />
+      <Contact />
     </div>
   );
 }

@@ -1,8 +1,11 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  /* Tema por defecto (se sobreescribe con [data-theme]) */
+  --background: radial-gradient(1200px 800px at 80% -10%, rgba(16, 185, 129, 0.08), transparent 60%),
+                radial-gradient(900px 600px at 0% 100%, rgba(20, 184, 166, 0.08), transparent 60%),
+                linear-gradient(180deg, #081012 0%, #050b0c 100%);
+  --foreground: #e6f4f1;
 }
 
 @theme inline {
@@ -12,11 +15,18 @@
   --font-mono: var(--font-geist-mono);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+/* Light/Dark explícitos via data-theme */
+[data-theme="light"] {
+  --background: radial-gradient(1200px 800px at 80% -10%, rgba(16, 185, 129, 0.12), transparent 60%),
+                radial-gradient(900px 600px at 0% 100%, rgba(20, 184, 166, 0.12), transparent 60%),
+                linear-gradient(180deg, #f5fffd 0%, #e8fbf7 100%);
+  --foreground: #0b1a18;
+}
+[data-theme="dark"] {
+  --background: radial-gradient(1200px 800px at 80% -10%, rgba(16, 185, 129, 0.10), transparent 60%),
+                radial-gradient(900px 600px at 0% 100%, rgba(20, 184, 166, 0.10), transparent 60%),
+                linear-gradient(180deg, #070e10 0%, #030607 100%);
+  --foreground: #e6f4f1;
 }
 
 body {
