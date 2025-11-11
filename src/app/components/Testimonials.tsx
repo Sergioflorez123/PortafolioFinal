@@ -16,12 +16,12 @@
  
          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
            <div className="rounded-lg p-6 backdrop-blur-sm" style={{ background: 'var(--surface)', border: '1px solid var(--surface-border)' }}>
-             <p className="text-gray-300">“Profesional, rápido y con excelente comunicación. El resultado superó nuestras expectativas.”</p>
-             <p className="mt-4 font-semibold" style={{ color: 'var(--accent)' }}>— Cliente A</p>
+             <p style={{ color: 'var(--foreground)' }}>{t('testimonials.quote1')}</p>
+             <p className="mt-4 font-semibold" style={{ color: 'var(--accent)' }}>{t('testimonials.clientA')}</p>
            </div>
            <div className="rounded-lg p-6 backdrop-blur-sm" style={{ background: 'var(--surface)', border: '1px solid var(--surface-border)' }}>
-             <p className="text-gray-300">“Gran atención al detalle y enfoque en la experiencia del usuario.”</p>
-             <p className="mt-4 font-semibold" style={{ color: 'var(--accent)' }}>— Cliente B</p>
+             <p style={{ color: 'var(--foreground)' }}>{t('testimonials.quote2')}</p>
+             <p className="mt-4 font-semibold" style={{ color: 'var(--accent)' }}>{t('testimonials.clientB')}</p>
            </div>
          </div>
        </div>

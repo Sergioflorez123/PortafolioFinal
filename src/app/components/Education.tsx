@@ -16,9 +16,8 @@
  
          <div className="rounded-lg p-8 backdrop-blur-sm" style={{ background: 'var(--surface)', border: '1px solid var(--surface-border)' }}>
            <h3 className="text-xl font-semibold" style={{ color: 'var(--accent)' }}>Ingeniería en Software</h3>
-           <p className="text-gray-400 mt-1">Universidad Cooperativa de Colombia | 2020 - Actualidad</p>
-           <p className="text-gray-300 mt-2">Estudiante: <span className="font-semibold" style={{ color: 'var(--accent)' }}>Sergio Antonio Florez Salas</span></p>
-           <p className="text-gray-300">Promedio: <span className="font-semibold" style={{ color: 'var(--accent)' }}>4.3/5.0</span></p>
+           <p className="text-gray-400 mt-1">Universidad Cooperativa de Colombia | 2025 - Actualidad</p>
+           <p className="mt-2" style={{ color: 'var(--foreground)' }}>Estudiante: <span className="font-semibold" style={{ color: 'var(--accent)' }}>Sergio Antonio Florez Salas</span></p>
          </div>
        </div>
      </section>

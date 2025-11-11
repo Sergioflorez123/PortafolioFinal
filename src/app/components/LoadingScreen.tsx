@@ -7,20 +7,24 @@ export default function LoadingScreen() {
   const [isLoaded, setIsLoaded] = useState(false);
 
   useEffect(() => {
-    const interval = setInterval(() => {
-      setProgress((prev) => {
-        if (prev >= 100) {
-          clearInterval(interval);
-          setTimeout(() => setIsLoaded(true), 500);
-          return 100;
-        }
-        // Incremento acelerado al inicio, más lento al final
-        const increment = prev < 20 ? 2 : prev < 70 ? 1.5 : 1;
-        return prev + increment;
-      });
-    }, 30);
+    const start = performance.now();
+    const durationMs = 900; // duración total más corta (~0.9s)
 
-    return () => clearInterval(interval);
+    let raf = 0;
+    const step = (now: number) => {
+      const elapsed = now - start;
+      const p = Math.min(100, (elapsed / durationMs) * 100);
+      setProgress(p);
+      if (p >= 100) {
+        setTimeout(() => setIsLoaded(true), 200);
+        cancelAnimationFrame(raf);
+        return;
+      }
+      raf = requestAnimationFrame(step);
+    };
+
+    raf = requestAnimationFrame(step);
+    return () => cancelAnimationFrame(raf);
   }, []);
 
   if (isLoaded) return null;
@@ -62,7 +66,7 @@ export default function LoadingScreen() {
         </div>
 
         {/* Enhanced progress bar container purple */}
-        <div className="w-96 space-y-4">
+        <div className="w-72 space-y-4">
           {/* Progress bar frame */}
           <div className="relative">
             {/* Outer frame */}
@@ -87,17 +91,17 @@ export default function LoadingScreen() {
 
           {/* Progress percentage with neon orange effect */}
           <div className="mt-6">
-            <span className="text-6xl font-mono font-bold tabular-nums" style={{
+            <span className="text-5xl font-mono font-bold tabular-nums" style={{
               color: 'var(--accent)',
               textShadow: '0 0 10px var(--accent), 0 0 20px var(--accent-strong)'
             }}>
               {Math.floor(progress)}
             </span>
-            <span className="text-4xl font-mono ml-2" style={{ color: 'var(--accent-strong)' }}>%</span>
+            <span className="text-3xl font-mono ml-2" style={{ color: 'var(--accent-strong)' }}>%</span>
           </div>
 
           {/* Scanning line effect orange */}
-          <div className="relative w-96 h-1 bg-gradient-to-r from-transparent via-amber-400 to-transparent opacity-70">
+          <div className="relative w-72 h-1 bg-gradient-to-r from-transparent via-amber-400 to-transparent opacity-70">
             <div className="absolute inset-0 animate-pulse" style={{
               background: 'linear-gradient(90deg, transparent, rgba(245, 158, 11, 0.5), transparent)',
               width: '100%'

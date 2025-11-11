@@ -23,7 +23,7 @@
            </form>
  
            <div className="space-y-4">
-             <a href="mailto:sergio@example.com" className="block rounded-lg p-4 transition" style={{ border: '1px solid var(--surface-border)', color: 'var(--accent)' }}>sergio@example.com</a>
+             <a href="mailto:sergioflorez043@gmail.com" className="block rounded-lg p-4 transition" style={{ border: '1px solid var(--surface-border)', color: 'var(--accent)' }}>sergioflorez043@gmail.com</a>
              <a href="https://wa.me/1234567890" target="_blank" rel="noopener noreferrer" className="block rounded-lg p-4 transition" style={{ border: '1px solid var(--surface-border)', color: 'var(--accent)' }}>WhatsApp</a>
              <a href="https://www.linkedin.com/in/sergioflorez" target="_blank" rel="noopener noreferrer" className="block rounded-lg p-4 transition" style={{ border: '1px solid var(--surface-border)', color: 'var(--accent)' }}>LinkedIn</a>
            </div>

@@ -16,19 +16,19 @@
  
          <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
            <div className="rounded-lg p-6 backdrop-blur-sm" style={{ background: 'var(--surface)', border: '1px solid var(--surface-border)' }}>
-             <h3 className="text-xl font-semibold" style={{ color: 'var(--accent)' }}>Gestión de Tareas</h3>
+             <h3 className="text-xl font-semibold" style={{ color: 'var(--accent)' }}>{t('projects.taskManager.title')}</h3>
              <p className="text-sm text-gray-400 mt-1">React, Node.js, MongoDB</p>
-             <p className="text-gray-300 mt-3">App para gestionar tareas con autenticación y UI moderna.</p>
+             <p className="mt-3" style={{ color: 'var(--foreground)' }}>{t('projects.taskManager.desc')}</p>
            </div>
            <div className="rounded-lg p-6 backdrop-blur-sm" style={{ background: 'var(--surface)', border: '1px solid var(--surface-border)' }}>
-             <h3 className="text-xl font-semibold" style={{ color: 'var(--accent)' }}>Reservas Restaurante</h3>
+             <h3 className="text-xl font-semibold" style={{ color: 'var(--accent)' }}>{t('projects.restaurant.title')}</h3>
              <p className="text-sm text-gray-400 mt-1">Java, Spring Boot, MySQL</p>
-             <p className="text-gray-300 mt-3">Sistema de reservas online con gestión de disponibilidad.</p>
+             <p className="mt-3" style={{ color: 'var(--foreground)' }}>{t('projects.restaurant.desc')}</p>
            </div>
            <div className="rounded-lg p-6 backdrop-blur-sm" style={{ background: 'var(--surface)', border: '1px solid var(--surface-border)' }}>
-             <h3 className="text-xl font-semibold" style={{ color: 'var(--accent)' }}>API Inventario</h3>
+             <h3 className="text-xl font-semibold" style={{ color: 'var(--accent)' }}>{t('projects.inventory.title')}</h3>
              <p className="text-sm text-gray-400 mt-1">Python, Django, PostgreSQL</p>
-             <p className="text-gray-300 mt-3">API RESTful para inventarios y productos.</p>
+             <p className="mt-3" style={{ color: 'var(--foreground)' }}>{t('projects.inventory.desc')}</p>
            </div>
          </div>
        </div>

@@ -23,7 +23,7 @@ export default function Hero() {
               }}>
                 {t('hero.title')}
               </h1>
-              <p className="text-lg lg:text-xl text-gray-300 leading-relaxed">
+              <p className="text-lg lg:text-xl leading-relaxed" style={{ color: 'var(--foreground)' }}>
                 {t('hero.subtitle')}
               </p>
             </div>

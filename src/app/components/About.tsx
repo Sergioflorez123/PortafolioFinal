@@ -32,7 +32,7 @@ export default function About() {
             }}>
               {t('about.title')}
             </h2>
-            <p className="text-lg leading-relaxed text-gray-300">
+            <p className="text-lg leading-relaxed" style={{ color: 'var(--foreground)' }}>
               {t('about.text')}
             </p>
           </div>
