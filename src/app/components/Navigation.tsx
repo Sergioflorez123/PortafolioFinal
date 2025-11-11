@@ -32,9 +32,11 @@ export default function Navigation() {
               background: 'var(--accent)',
               boxShadow: '0 0 15px var(--accent), 0 0 30px var(--accent-strong)'
             }}></div>
-            <span className="text-white font-semibold text-lg font-mono tracking-wider" style={{
+            <span className={`font-semibold text-lg font-mono tracking-wider ${
+              theme === 'light' ? 'text-gray-900' : 'text-white'
+            }`} style={theme === 'dark' ? {
               textShadow: '0 0 15px #ffffff'
-            }}>SERGIO FLÓREZ</span>
+            } : {}}>SERGIO FLÓREZ</span>
           </div>
 
           {/* Navigation Links */}
@@ -46,11 +48,11 @@ export default function Navigation() {
                 onClick={() => setActiveSection(item.name)}
                 className={`text-sm font-medium font-mono uppercase tracking-wider transition-all duration-200 ${
                   activeSection === item.name
-                    ? 'text-amber-300'
-                    : 'text-gray-300 hover:text-amber-300'
+                    ? theme === 'light' ? 'text-amber-600' : 'text-amber-300'
+                    : theme === 'light' ? 'text-gray-900 hover:text-amber-600' : 'text-gray-300 hover:text-amber-300'
                 }`}
                 style={activeSection === item.name ? {
-                  textShadow: '0 0 15px var(--accent), 0 0 25px var(--accent-strong)',
+                  textShadow: theme === 'dark' ? '0 0 15px var(--accent), 0 0 25px var(--accent-strong)' : 'none',
                   transform: 'scale(1.05)'
                 } : {}}
               >

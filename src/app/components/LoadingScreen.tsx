@@ -30,7 +30,7 @@ export default function LoadingScreen() {
   if (isLoaded) return null;
 
   return (
-    <div className="fixed inset-0 z-50 flex items-center justify-center bg-black">
+    <div className="fixed inset-0 z-50 flex items-center justify-center bg-black" style={{ minHeight: '100vh', minWidth: '100vw' }}>
       {/* Grid pattern background orange */}
       <div className="absolute inset-0 opacity-20" style={{
         backgroundImage: 'linear-gradient(rgba(245, 158, 11, 0.15) 1px, transparent 1px), linear-gradient(90deg, rgba(234, 88, 12, 0.15) 1px, transparent 1px)',
@@ -43,7 +43,7 @@ export default function LoadingScreen() {
       <div className="absolute bottom-0 left-0 w-32 h-32 border-b-2 border-l-2" style={{ borderColor: 'var(--accent-strong)' }}></div>
       <div className="absolute bottom-0 right-0 w-32 h-32 border-b-2 border-r-2" style={{ borderColor: 'var(--accent-strong)' }}></div>
 
-      <div className="text-center space-y-10 relative z-10">
+      <div className="text-center space-y-10 relative z-10 flex flex-col items-center justify-center">
         {/* Holographic text effect orange */}
         <div className="relative">
           <h1 className="text-7xl font-bold tracking-[0.3em] select-none uppercase mb-2" style={{
@@ -74,8 +74,11 @@ export default function LoadingScreen() {
               {/* Inner fill */}
               <div
                 className="h-full relative"
-                style={{ background: 'linear-gradient(to right, #f59e0b, #fb923c, #f59e0b)' }}
-                style={{ width: `${progress}%`, transition: 'width 0.3s ease-out' }}
+                style={{ 
+                  background: 'linear-gradient(to right, #f59e0b, #fb923c, #f59e0b)',
+                  width: `${progress}%`, 
+                  transition: 'width 0.3s ease-out' 
+                }}
               >
                 {/* Scanning line */}
                 <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/50 to-transparent animate-shimmer"></div>
