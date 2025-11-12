@@ -3,6 +3,7 @@
 import { useContext } from 'react';
 import { I18nContext } from '../contexts/I18nContext';
 import { ThemeContext } from '../contexts/ThemeContext';
+import ScrollAnimation from './ScrollAnimation';
 
 // Componente de Avatar 3D estilo cartoon
 function Avatar3D({ type }: { type: 'jesika' | 'santiago' | 'wilson' }) {
@@ -198,17 +199,20 @@ export default function Testimonials() {
   return (
     <section id="testimonios" className="py-32 px-6 lg:px-8 relative">
       <div className="max-w-7xl mx-auto">
-        <h2 className="text-4xl font-bold font-mono uppercase tracking-wider mb-12" style={{
-          color: theme === 'light' ? '#0a0a0a' : '#ffffff',
-          textShadow: theme === 'light' 
-            ? '0 0 10px rgba(245, 158, 11, 0.3), 0 0 20px rgba(234, 88, 12, 0.2)'
-            : '0 0 20px var(--accent), 0 0 30px var(--accent-strong)'
-        }}>
-          {t('testimonials.title')}
-        </h2>
+        <ScrollAnimation animationType="fade-in-up">
+          <h2 className="text-4xl font-bold font-mono uppercase tracking-wider mb-12" style={{
+            color: theme === 'light' ? '#0a0a0a' : '#ffffff',
+            textShadow: theme === 'light' 
+              ? '0 0 10px rgba(245, 158, 11, 0.3), 0 0 20px rgba(234, 88, 12, 0.2)'
+              : '0 0 20px var(--accent), 0 0 30px var(--accent-strong)'
+          }}>
+            {t('testimonials.title')}
+          </h2>
+        </ScrollAnimation>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {testimonials.map((testimonial, index) => (
+            <ScrollAnimation key={index} animationType="fade-in-up" delay={index * 150}>
             <div 
               key={index}
               className="rounded-lg p-6 backdrop-blur-sm transition-all duration-300 hover:scale-[1.02] hover:shadow-2xl" 
@@ -237,6 +241,7 @@ export default function Testimonials() {
                 </p>
               </div>
             </div>
+            </ScrollAnimation>
           ))}
         </div>
       </div>

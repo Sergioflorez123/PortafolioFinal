@@ -3,6 +3,7 @@
 import { useContext } from 'react';
 import { I18nContext } from '../contexts/I18nContext';
 import { ThemeContext } from '../contexts/ThemeContext';
+import ScrollAnimation from './ScrollAnimation';
 
 export default function About() {
   const { t } = useContext(I18nContext);
@@ -26,26 +27,28 @@ export default function About() {
       <div className="absolute inset-0" style={{ background: 'linear-gradient(to bottom, transparent, rgba(234,88,12,0.08), transparent)' }}></div>
 
       <div className="max-w-7xl mx-auto">
+        <ScrollAnimation animationType="fade-in-up">
+          <h2 className="text-4xl font-bold font-mono uppercase tracking-wider mb-12" style={{
+            color: theme === 'light' ? '#0a0a0a' : '#ffffff',
+            textShadow: theme === 'light' 
+              ? '0 0 10px rgba(245, 158, 11, 0.3), 0 0 20px rgba(234, 88, 12, 0.2)'
+              : '0 0 20px var(--accent), 0 0 30px var(--accent-strong)'
+          }}>
+            {t('about.title')}
+          </h2>
+        </ScrollAnimation>
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
           {/* Left side - About text */}
-          <div className="space-y-6">
-            <h2 className="text-4xl font-bold font-mono uppercase tracking-wider mb-8" style={{
-              color: theme === 'light' ? '#0a0a0a' : '#ffffff',
-              textShadow: theme === 'light' 
-                ? '0 0 10px rgba(245, 158, 11, 0.3), 0 0 20px rgba(234, 88, 12, 0.2)'
-                : '0 0 20px var(--accent), 0 0 30px var(--accent-strong)'
-            }}>
-              {t('about.title')}
-            </h2>
+          <ScrollAnimation animationType="slide-left" className="space-y-6">
             <div className="text-lg leading-relaxed space-y-4" style={{ color: 'var(--foreground)' }}>
               {t('about.text').split('\n\n').map((paragraph, index) => (
                 <p key={index}>{paragraph}</p>
               ))}
             </div>
-          </div>
+          </ScrollAnimation>
 
           {/* Right side - Skills */}
-          <div className="space-y-6">
+          <ScrollAnimation animationType="slide-right" className="space-y-6">
             <h2 className="text-4xl font-bold font-mono uppercase tracking-wider mb-8" style={{
               color: theme === 'light' ? '#0a0a0a' : '#ffffff',
               textShadow: theme === 'light' 
@@ -149,7 +152,7 @@ export default function About() {
                 </div>
               ))}
             </div>
-          </div>
+          </ScrollAnimation>
         </div>
       </div>
     </section>
