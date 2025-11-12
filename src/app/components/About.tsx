@@ -2,9 +2,11 @@
 
 import { useContext } from 'react';
 import { I18nContext } from '../contexts/I18nContext';
+import { ThemeContext } from '../contexts/ThemeContext';
 
 export default function About() {
   const { t } = useContext(I18nContext);
+  const { theme } = useContext(ThemeContext);
   const skills = [
     { name: 'Python', icon: '🐍', color: 'from-yellow-500 to-amber-600', bgColor: '#fbbf24' },
     { name: 'Java', icon: '☕', color: 'from-red-500 to-orange-600', bgColor: '#dc2626' },
@@ -27,8 +29,11 @@ export default function About() {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
           {/* Left side - About text */}
           <div className="space-y-6">
-            <h2 className="text-4xl font-bold text-white font-mono uppercase tracking-wider mb-8" style={{
-              textShadow: '0 0 20px var(--accent), 0 0 30px var(--accent-strong)'
+            <h2 className="text-4xl font-bold font-mono uppercase tracking-wider mb-8" style={{
+              color: theme === 'light' ? '#0a0a0a' : '#ffffff',
+              textShadow: theme === 'light' 
+                ? '0 0 10px rgba(245, 158, 11, 0.3), 0 0 20px rgba(234, 88, 12, 0.2)'
+                : '0 0 20px var(--accent), 0 0 30px var(--accent-strong)'
             }}>
               {t('about.title')}
             </h2>
@@ -41,8 +46,11 @@ export default function About() {
 
           {/* Right side - Skills */}
           <div className="space-y-6">
-            <h2 className="text-4xl font-bold text-white font-mono uppercase tracking-wider mb-8" style={{
-              textShadow: '0 0 20px var(--accent), 0 0 30px var(--accent-strong)'
+            <h2 className="text-4xl font-bold font-mono uppercase tracking-wider mb-8" style={{
+              color: theme === 'light' ? '#0a0a0a' : '#ffffff',
+              textShadow: theme === 'light' 
+                ? '0 0 10px rgba(245, 158, 11, 0.3), 0 0 20px rgba(234, 88, 12, 0.2)'
+                : '0 0 20px var(--accent), 0 0 30px var(--accent-strong)'
             }}>
               {t('about.skills')}
             </h2>

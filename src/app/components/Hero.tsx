@@ -2,9 +2,11 @@
 
 import { useContext } from 'react';
 import { I18nContext } from '../contexts/I18nContext';
+import { ThemeContext } from '../contexts/ThemeContext';
 
 export default function Hero() {
   const { t } = useContext(I18nContext);
+  const { theme } = useContext(ThemeContext);
   return (
     <section id="inicio" className="pt-32 pb-20 px-6 lg:px-8 relative">
       {/* Rejilla neon en tonos naranja */}
@@ -18,8 +20,11 @@ export default function Hero() {
           {/* Left Content */}
           <div className="space-y-8 animate-fade-in">
             <div>
-              <h1 className="text-5xl lg:text-6xl font-bold text-white mb-6 leading-tight font-mono uppercase tracking-wider" style={{
-                textShadow: '0 0 20px var(--accent), 0 0 40px var(--accent), 0 0 60px var(--accent-strong), 0 0 80px var(--accent-strong)'
+              <h1 className="text-5xl lg:text-6xl font-bold mb-6 leading-tight font-mono uppercase tracking-wider" style={{
+                color: theme === 'light' ? '#0a0a0a' : '#ffffff',
+                textShadow: theme === 'light' 
+                  ? '0 0 10px rgba(245, 158, 11, 0.3), 0 0 20px rgba(234, 88, 12, 0.2)'
+                  : '0 0 20px var(--accent), 0 0 40px var(--accent), 0 0 60px var(--accent-strong), 0 0 80px var(--accent-strong)'
               }}>
                 {t('hero.title')}
               </h1>
