@@ -32,9 +32,11 @@ export default function About() {
             }}>
               {t('about.title')}
             </h2>
-            <p className="text-lg leading-relaxed" style={{ color: 'var(--foreground)' }}>
-              {t('about.text')}
-            </p>
+            <div className="text-lg leading-relaxed space-y-4" style={{ color: 'var(--foreground)' }}>
+              {t('about.text').split('\n\n').map((paragraph, index) => (
+                <p key={index}>{paragraph}</p>
+              ))}
+            </div>
           </div>
 
           {/* Right side - Skills */}
