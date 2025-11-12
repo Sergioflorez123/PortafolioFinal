@@ -226,7 +226,7 @@ export default function Testimonials() {
               </div>
               
               {/* Nombre del cliente */}
-              <div className="pt-4 border-t text-center" style={{ borderColor: 'var(--surface-border)' }}>
+              <div className={`border-t text-center ${testimonial.avatarType === 'santiago' ? 'pt-5' : 'pt-4'}`} style={{ borderColor: 'var(--surface-border)' }}>
                 <p className="font-semibold text-base font-mono" style={{ color: 'var(--accent)' }}>
                   {testimonial.client.replace('— ', '')}
                 </p>
