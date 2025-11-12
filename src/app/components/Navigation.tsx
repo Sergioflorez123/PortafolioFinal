@@ -1,13 +1,36 @@
 'use client';
 
-import { useState, useContext } from 'react';
+import { useState, useContext, useEffect } from 'react';
 import { ThemeContext } from '../contexts/ThemeContext';
 import { I18nContext } from '../contexts/I18nContext';
 
 export default function Navigation() {
   const [activeSection, setActiveSection] = useState('Inicio');
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const { theme, toggleTheme } = useContext(ThemeContext);
   const { lang, setLang, t } = useContext(I18nContext);
+
+  useEffect(() => {
+    const sections = ['inicio', 'sobre-mi', 'proyectos', 'testimonios', 'educacion', 'contacto'];
+    const sectionNames = [t('nav.home'), t('nav.about'), t('nav.projects'), t('nav.testimonials'), t('nav.education'), t('nav.contact')];
+
+    const handleScroll = () => {
+      const scrollPosition = window.scrollY + 100;
+
+      for (let i = sections.length - 1; i >= 0; i--) {
+        const section = document.getElementById(sections[i]);
+        if (section && section.offsetTop <= scrollPosition) {
+          setActiveSection(sectionNames[i]);
+          break;
+        }
+      }
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    handleScroll(); // Check on mount
+
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, [t]);
 
   const navItems = [
     { name: t('nav.home'), href: '#inicio' },
@@ -39,13 +62,16 @@ export default function Navigation() {
             } : {}}>SERGIO FLÓREZ</span>
           </div>
 
-          {/* Navigation Links */}
+          {/* Navigation Links - Desktop */}
           <div className="hidden md:flex items-center gap-6">
             {navItems.map((item) => (
               <a
                 key={item.name}
                 href={item.href}
-                onClick={() => setActiveSection(item.name)}
+                onClick={() => {
+                  setActiveSection(item.name);
+                  setMobileMenuOpen(false);
+                }}
                 className={`text-sm font-medium font-mono uppercase tracking-wider transition-all duration-200 ${
                   activeSection === item.name
                     ? theme === 'light' ? 'text-amber-600' : 'text-amber-300'
@@ -60,6 +86,25 @@ export default function Navigation() {
               </a>
             ))}
           </div>
+
+          {/* Mobile Menu Button */}
+          <button
+            onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+            className="md:hidden p-2 rounded-md transition"
+            style={{
+              color: 'var(--accent)',
+              border: '1px solid var(--surface-border)'
+            }}
+            aria-label="Toggle menu"
+          >
+            <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              {mobileMenuOpen ? (
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+              ) : (
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
+              )}
+            </svg>
+          </button>
 
           {/* Controles: Tema e Idioma */}
           <div className="flex items-center gap-3">
@@ -96,6 +141,34 @@ export default function Navigation() {
             </select>
           </div>
         </div>
+
+        {/* Mobile Menu */}
+        {mobileMenuOpen && (
+          <div className="md:hidden py-4 border-t" style={{ borderColor: 'var(--surface-border)' }}>
+            <div className="flex flex-col gap-4">
+              {navItems.map((item) => (
+                <a
+                  key={item.name}
+                  href={item.href}
+                  onClick={() => {
+                    setActiveSection(item.name);
+                    setMobileMenuOpen(false);
+                  }}
+                  className={`text-sm font-medium font-mono uppercase tracking-wider transition-all duration-200 py-2 ${
+                    activeSection === item.name
+                      ? theme === 'light' ? 'text-amber-600' : 'text-amber-300'
+                      : theme === 'light' ? 'text-gray-900 hover:text-amber-600' : 'text-gray-300 hover:text-amber-300'
+                  }`}
+                  style={activeSection === item.name ? {
+                    textShadow: theme === 'dark' ? '0 0 15px var(--accent), 0 0 25px var(--accent-strong)' : 'none'
+                  } : {}}
+                >
+                  {item.name}
+                </a>
+              ))}
+            </div>
+          </div>
+        )}
       </div>
     </nav>
   );

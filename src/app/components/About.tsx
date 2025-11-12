@@ -67,15 +67,20 @@ export default function About() {
                   const rafId = rafRefs.current.get(skill.name);
                   if (rafId) return; // Skip if animation frame is pending
                   
+                  const element = e.currentTarget;
+                  const mouseX = e.clientX;
+                  const mouseY = e.clientY;
+                  
                   const newRafId = requestAnimationFrame(() => {
-                    const rect = e.currentTarget.getBoundingClientRect();
-                    const x = e.clientX - rect.left;
-                    const y = e.clientY - rect.top;
+                    if (!element) return;
+                    const rect = element.getBoundingClientRect();
+                    const x = mouseX - rect.left;
+                    const y = mouseY - rect.top;
                     const centerX = rect.width / 2;
                     const centerY = rect.height / 2;
                     const rotateX = (y - centerY) / 5;
                     const rotateY = (centerX - x) / 5;
-                    e.currentTarget.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) scale(1.1) translateZ(20px)`;
+                    element.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) scale(1.1) translateZ(20px)`;
                     rafRefs.current.set(skill.name, null);
                   });
                   rafRefs.current.set(skill.name, newRafId);
