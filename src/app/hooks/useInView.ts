@@ -9,13 +9,16 @@ interface UseInViewOptions {
 }
 
 export function useInView(options: UseInViewOptions = {}) {
-  const { threshold = 0.1, rootMargin = '0px', triggerOnce = false } = options;
+  const { threshold = 0.1, rootMargin = '50px', triggerOnce = false } = options;
   const [isInView, setIsInView] = useState(false);
   const ref = useRef<HTMLElement>(null);
 
   useEffect(() => {
     const element = ref.current;
     if (!element) return;
+
+    // Early return if already triggered and triggerOnce is true
+    if (triggerOnce && isInView) return;
 
     const observer = new IntersectionObserver(
       ([entry]) => {
@@ -28,15 +31,16 @@ export function useInView(options: UseInViewOptions = {}) {
           setIsInView(false);
         }
       },
-      { threshold, rootMargin }
+      { 
+        threshold, 
+        rootMargin,
+      }
     );
 
     observer.observe(element);
 
     return () => {
-      if (element) {
-        observer.unobserve(element);
-      }
+      observer.disconnect();
     };
   }, [threshold, rootMargin, triggerOnce]);
 

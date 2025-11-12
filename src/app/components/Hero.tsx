@@ -72,7 +72,7 @@ export default function Hero() {
             {/* Social Media Buttons */}
             <div className="flex gap-4 pt-4">
               <a
-                href="https://www.instagram.com/sergioflorez" 
+                href="https://www.instagram.com/sergio_florez_a/" 
                 target="_blank" 
                 rel="noopener noreferrer"
                 className="group relative flex items-center justify-center w-14 h-14 rounded-lg bg-gradient-to-br from-pink-600 via-purple-600 to-orange-500 hover:from-pink-500 hover:to-purple-500 transition-all duration-300"
@@ -116,7 +116,7 @@ export default function Hero() {
               </a>
 
               <a
-                href="https://www.tiktok.com/@sergioflorez" 
+                href="https://www.tiktok.com/@sergio.florez.s" 
                 target="_blank" 
                 rel="noopener noreferrer"
                 className="group relative flex items-center justify-center w-14 h-14 rounded-lg bg-gradient-to-br from-black to-gray-800 hover:from-gray-900 hover:to-gray-700 transition-all duration-300"
