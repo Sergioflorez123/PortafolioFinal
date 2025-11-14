@@ -21,23 +21,16 @@ export default function Contact() {
             {t('contact.title')}
           </h2>
         </ScrollAnimation>
- 
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-10">
-          <ScrollAnimation animationType="slide-left">
-          <form className="space-y-4 rounded-lg p-6 backdrop-blur-sm" style={{ background: 'var(--surface)', border: '1px solid var(--surface-border)' }}>
-            <input className="w-full bg-transparent rounded-md px-4 py-3 focus:outline-none" placeholder={t('contact.form.name')} style={{ border: '1px solid var(--surface-border)', color: 'var(--foreground)' }} />
-            <input className="w-full bg-transparent rounded-md px-4 py-3 focus:outline-none" placeholder={t('contact.form.email')} type="email" style={{ border: '1px solid var(--surface-border)', color: 'var(--foreground)' }} />
-            <textarea className="w-full bg-transparent rounded-md px-4 py-3 focus:outline-none" placeholder={t('contact.form.message')} rows={5} style={{ border: '1px solid var(--surface-border)', color: 'var(--foreground)' }} />
-            <button type="submit" className="px-6 py-3 text-white rounded-md transition" style={{ background: 'linear-gradient(to right, #f59e0b, #ea580c)', border: '1px solid var(--surface-border)' }}>{t('contact.form.send')}</button>
-          </form>
-          </ScrollAnimation>
-
-          <ScrollAnimation animationType="slide-right">
-          <div className="space-y-4">
-             <a href="mailto:sergioflorez043@gmail.com" className="block rounded-lg p-4 transition" style={{ border: '1px solid var(--surface-border)', color: 'var(--accent)' }}>sergioflorez043@gmail.com</a>
-             <a href="https://wa.me/1234567890" target="_blank" rel="noopener noreferrer" className="block rounded-lg p-4 transition" style={{ border: '1px solid var(--surface-border)', color: 'var(--accent)' }}>WhatsApp</a>
-            <a href="https://www.linkedin.com/in/sergioflorez" target="_blank" rel="noopener noreferrer" className="block rounded-lg p-4 transition" style={{ border: '1px solid var(--surface-border)', color: 'var(--accent)' }}>LinkedIn</a>
-          </div>
+        <div className="grid grid-cols-1 gap-10">
+          <ScrollAnimation animationType="fade-in-up">
+            <div className="space-y-4">
+              <div className="rounded-lg p-4 backdrop-blur-sm" style={{ background: 'var(--surface)', border: '1px solid var(--surface-border)' }}>
+                <p className="text-lg font-semibold" style={{ color: 'var(--foreground)' }}>Sergio Flórez</p>
+              </div>
+              <a href="mailto:sergioflorez043@gmail.com" className="block rounded-lg p-4 transition" style={{ border: '1px solid var(--surface-border)', color: 'var(--accent)' }}>sergioflorez043@gmail.com</a>
+              <a href="https://wa.me/1234567890" target="_blank" rel="noopener noreferrer" className="block rounded-lg p-4 transition" style={{ border: '1px solid var(--surface-border)', color: 'var(--accent)' }}>WhatsApp</a>
+              <a href="https://www.linkedin.com/in/sergioflorez" target="_blank" rel="noopener noreferrer" className="block rounded-lg p-4 transition" style={{ border: '1px solid var(--surface-border)', color: 'var(--accent)' }}>LinkedIn</a>
+            </div>
           </ScrollAnimation>
         </div>
       </div>

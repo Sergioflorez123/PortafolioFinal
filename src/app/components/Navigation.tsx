@@ -11,25 +11,39 @@ export default function Navigation() {
   const { lang, setLang, t } = useContext(I18nContext);
 
   useEffect(() => {
-    const sections = ['inicio', 'sobre-mi', 'proyectos', 'testimonios', 'educacion', 'contacto'];
-    const sectionNames = [t('nav.home'), t('nav.about'), t('nav.projects'), t('nav.testimonials'), t('nav.education'), t('nav.contact')];
+    const ids = ['inicio', 'sobre-mi', 'proyectos', 'testimonios', 'educacion', 'contacto'];
+    const elems = ids.map((id) => document.getElementById(id)).filter(Boolean) as HTMLElement[];
+    const names = [t('nav.home'), t('nav.about'), t('nav.projects'), t('nav.testimonials'), t('nav.education'), t('nav.contact')];
 
-    const handleScroll = () => {
+    let raf = 0;
+    let ticking = false;
+
+    const measure = () => {
       const scrollPosition = window.scrollY + 100;
-
-      for (let i = sections.length - 1; i >= 0; i--) {
-        const section = document.getElementById(sections[i]);
+      for (let i = elems.length - 1; i >= 0; i--) {
+        const section = elems[i];
         if (section && section.offsetTop <= scrollPosition) {
-          setActiveSection(sectionNames[i]);
+          setActiveSection(names[i]);
           break;
         }
       }
+      ticking = false;
     };
 
-    window.addEventListener('scroll', handleScroll);
-    handleScroll(); // Check on mount
+    const onScroll = () => {
+      if (!ticking) {
+        ticking = true;
+        raf = requestAnimationFrame(measure);
+      }
+    };
 
-    return () => window.removeEventListener('scroll', handleScroll);
+    window.addEventListener('scroll', onScroll, { passive: true });
+    measure();
+
+    return () => {
+      window.removeEventListener('scroll', onScroll);
+      cancelAnimationFrame(raf);
+    };
   }, [t]);
 
   const navItems = [

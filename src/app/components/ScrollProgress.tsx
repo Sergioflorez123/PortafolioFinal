@@ -6,14 +6,41 @@ export default function ScrollProgress() {
   const [scrollProgress, setScrollProgress] = useState(0);
 
   useEffect(() => {
-    const updateScrollProgress = () => {
-      const windowHeight = document.documentElement.scrollHeight - window.innerHeight;
-      const scrolled = (window.scrollY / windowHeight) * 100;
+    let height = document.documentElement.scrollHeight - window.innerHeight;
+    let raf = 0;
+    let ticking = false;
+
+    const measure = () => {
+      const scrolled = (window.scrollY / height) * 100;
+      if (!Number.isFinite(scrolled)) {
+        ticking = false;
+        return;
+      }
       setScrollProgress(scrolled);
+      ticking = false;
     };
 
-    window.addEventListener('scroll', updateScrollProgress);
-    return () => window.removeEventListener('scroll', updateScrollProgress);
+    const onScroll = () => {
+      if (!ticking) {
+        ticking = true;
+        raf = requestAnimationFrame(measure);
+      }
+    };
+
+    const onResize = () => {
+      height = document.documentElement.scrollHeight - window.innerHeight;
+      onScroll();
+    };
+
+    window.addEventListener('scroll', onScroll, { passive: true });
+    window.addEventListener('resize', onResize);
+    onScroll();
+
+    return () => {
+      window.removeEventListener('scroll', onScroll);
+      window.removeEventListener('resize', onResize);
+      cancelAnimationFrame(raf);
+    };
   }, []);
 
   return (
