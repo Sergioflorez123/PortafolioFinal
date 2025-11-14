@@ -205,7 +205,7 @@ export default function Hero() {
         boxShadow: '0 0 150px var(--accent)'
       }}></div>
       <div className="absolute top-0 right-0 w-96 h-96 rounded-full bg-orange-500/15 blur-3xl animate-pulse" style={{
-        boxShadow: '0 0 154px var(--accent-strong)',
+        boxShadow: '0 0 155px var(--accent-strong)',
         animationDelay: '1s'
       }}></div>
     </section>
