@@ -24,7 +24,7 @@ export default function Hero() {
                 color: theme === 'light' ? '#0a0a0a' : '#ffffff',
                 textShadow: theme === 'light' 
                   ? '0 0 10px rgba(245, 158, 11, 0.3), 0 0 20px rgba(234, 88, 12, 0.2)'
-                  : '0 0 20px var(--accent), 0 0 40px var(--accent), 0 0 60px var(--accent-strong), 0 0 80px var(--accent-strong)'
+                  : '0 0 18px var(--accent), 0 0 28px var(--accent-strong)'
               }}>
                 {t('hero.title')}
               </h1>
@@ -75,17 +75,9 @@ export default function Hero() {
                 href="https://www.instagram.com/sergio_florez_a/" 
                 target="_blank" 
                 rel="noopener noreferrer"
-                className="group relative flex items-center justify-center w-14 h-14 rounded-lg bg-gradient-to-br from-pink-600 via-purple-600 to-orange-500 hover:from-pink-500 hover:to-purple-500 transition-all duration-300"
+                className="group relative flex items-center justify-center w-14 h-14 rounded-lg bg-gradient-to-br from-pink-600 via-purple-600 to-orange-500 hover:from-pink-500 hover:to-purple-500 transition-transform duration-300 hover:translate-y-[-3px] hover:scale-105"
                 style={{
                   boxShadow: '0 0 15px rgba(236, 72, 153, 0.5)'
-                }}
-                onMouseEnter={(e) => {
-                  e.currentTarget.style.transform = 'translateY(-3px) scale(1.05)';
-                  e.currentTarget.style.boxShadow = '0 0 25px rgba(236, 72, 153, 0.8)';
-                }}
-                onMouseLeave={(e) => {
-                  e.currentTarget.style.transform = 'translateY(0) scale(1)';
-                  e.currentTarget.style.boxShadow = '0 0 15px rgba(236, 72, 153, 0.5)';
                 }}
               >
                 <svg className="w-7 h-7 text-white" fill="currentColor" viewBox="0 0 24 24">
@@ -97,17 +89,9 @@ export default function Hero() {
                 href="https://wa.me/1234567890" 
                 target="_blank" 
                 rel="noopener noreferrer"
-                className="group relative flex items-center justify-center w-14 h-14 rounded-lg bg-gradient-to-br from-green-500 to-green-600 hover:from-green-400 hover:to-green-500 transition-all duration-300"
+                className="group relative flex items-center justify-center w-14 h-14 rounded-lg bg-gradient-to-br from-green-500 to-green-600 hover:from-green-400 hover:to-green-500 transition-transform duration-300 hover:translate-y-[-3px] hover:scale-105"
                 style={{
                   boxShadow: '0 0 15px rgba(34, 197, 94, 0.5)'
-                }}
-                onMouseEnter={(e) => {
-                  e.currentTarget.style.transform = 'translateY(-3px) scale(1.05)';
-                  e.currentTarget.style.boxShadow = '0 0 25px rgba(34, 197, 94, 0.8)';
-                }}
-                onMouseLeave={(e) => {
-                  e.currentTarget.style.transform = 'translateY(0) scale(1)';
-                  e.currentTarget.style.boxShadow = '0 0 15px rgba(34, 197, 94, 0.5)';
                 }}
               >
                 <svg className="w-7 h-7 text-white" fill="currentColor" viewBox="0 0 24 24">
@@ -119,17 +103,9 @@ export default function Hero() {
                 href="https://www.tiktok.com/@sergio.florez.s" 
                 target="_blank" 
                 rel="noopener noreferrer"
-                className="group relative flex items-center justify-center w-14 h-14 rounded-lg bg-gradient-to-br from-black to-gray-800 hover:from-gray-900 hover:to-gray-700 transition-all duration-300"
+                className="group relative flex items-center justify-center w-14 h-14 rounded-lg bg-gradient-to-br from-black to-gray-800 hover:from-gray-900 hover:to-gray-700 transition-transform duration-300 hover:translate-y-[-3px] hover:scale-105"
                 style={{
                   boxShadow: '0 0 15px rgba(0, 0, 0, 0.5)'
-                }}
-                onMouseEnter={(e) => {
-                  e.currentTarget.style.transform = 'translateY(-3px) scale(1.05)';
-                  e.currentTarget.style.boxShadow = '0 0 25px rgba(0, 0, 0, 0.8)';
-                }}
-                onMouseLeave={(e) => {
-                  e.currentTarget.style.transform = 'translateY(0) scale(1)';
-                  e.currentTarget.style.boxShadow = '0 0 15px rgba(0, 0, 0, 0.5)';
                 }}
               >
                 <svg className="w-7 h-7 text-white" fill="currentColor" viewBox="0 0 24 24">
@@ -141,17 +117,9 @@ export default function Hero() {
                 href="https://www.linkedin.com/in/sergioflorez" 
                 target="_blank" 
                 rel="noopener noreferrer"
-                className="group relative flex items-center justify-center w-14 h-14 rounded-lg bg-gradient-to-br from-blue-600 to-blue-700 hover:from-blue-500 hover:to-blue-600 transition-all duration-300"
+                className="group relative flex items-center justify-center w-14 h-14 rounded-lg bg-gradient-to-br from-blue-600 to-blue-700 hover:from-blue-500 hover:to-blue-600 transition-transform duration-300 hover:translate-y-[-3px] hover:scale-105"
                 style={{
                   boxShadow: '0 0 15px rgba(37, 99, 235, 0.5)'
-                }}
-                onMouseEnter={(e) => {
-                  e.currentTarget.style.transform = 'translateY(-3px) scale(1.05)';
-                  e.currentTarget.style.boxShadow = '0 0 25px rgba(37, 99, 235, 0.8)';
-                }}
-                onMouseLeave={(e) => {
-                  e.currentTarget.style.transform = 'translateY(0) scale(1)';
-                  e.currentTarget.style.boxShadow = '0 0 15px rgba(37, 99, 235, 0.5)';
                 }}
               >
                 <svg className="w-7 h-7 text-white" fill="currentColor" viewBox="0 0 24 24">
@@ -180,11 +148,11 @@ export default function Hero() {
           <div className="flex justify-center lg:justify-end">
             <div className="relative group">
               {/* Resplandor exterior */}
-              <div className="absolute -inset-3 bg-gradient-to-r from-amber-300 via-orange-400 to-amber-300 rounded-full blur-3xl opacity-70 group-hover:opacity-90 transition duration-300 animate-pulse"></div>
+              <div className="absolute -inset-3 bg-gradient-to-r from-amber-300 via-orange-400 to-amber-300 rounded-full blur-xl opacity-60 group-hover:opacity-80 transition duration-300"></div>
               
               {/* Círculo interior con borde neon */}
               <div className="relative w-80 h-80 rounded-full overflow-hidden border-4 border-amber-300/60 bg-gradient-to-br from-orange-900 to-amber-900 p-2" style={{
-                boxShadow: '0 0 40px var(--accent), 0 0 70px var(--accent-strong), inset 0 0 40px rgba(245, 158, 11, 0.35)'
+                boxShadow: '0 0 24px var(--accent), 0 0 36px var(--accent-strong), inset 0 0 24px rgba(245, 158, 11, 0.30)'
               }}>
                 {/* Placeholder de imagen */}
                 <div className="w-full h-full rounded-full bg-gradient-to-br from-orange-900 via-amber-800 to-orange-950 flex items-center justify-center">
@@ -193,20 +161,19 @@ export default function Hero() {
               </div>
 
               {/* Anillos neon animados */}
-              <div className="absolute inset-0 border-4 border-amber-300/40 rounded-full animate-ping"></div>
-              <div className="absolute inset-0 border-4 border-orange-400/40 rounded-full animate-pulse"></div>
+              <div className="absolute inset-0 border-4 border-amber-300/40 rounded-full"></div>
+              <div className="absolute inset-0 border-4 border-orange-400/40 rounded-full"></div>
             </div>
           </div>
         </div>
       </div>
 
       {/* Elementos de fondo neon naranja */}
-      <div className="absolute bottom-0 left-0 w-64 h-64 rounded-full bg-amber-400/20 blur-3xl animate-pulse" style={{
-        boxShadow: '0 0 150px var(--accent)'
+      <div className="absolute bottom-0 left-0 w-64 h-64 rounded-full bg-amber-400/20 blur-xl" style={{
+        boxShadow: '0 0 60px var(--accent)'
       }}></div>
-      <div className="absolute top-0 right-0 w-96 h-96 rounded-full bg-orange-500/15 blur-3xl animate-pulse" style={{
-        boxShadow: '0 0 155px var(--accent-strong)',
-        animationDelay: '1s'
+      <div className="absolute top-0 right-0 w-96 h-96 rounded-full bg-orange-500/15 blur-xl" style={{
+        boxShadow: '0 0 60px var(--accent-strong)'
       }}></div>
     </section>
   );

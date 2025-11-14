@@ -238,3 +238,19 @@ textarea::placeholder {
   perspective: 1000px;
   transform-style: preserve-3d;
 }
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto !important;
+  }
+  .animate-shimmer,
+  .animate-fade-in,
+  .animate-pulse,
+  .scroll-fade-in,
+  .scroll-fade-in-up,
+  .scroll-slide-left,
+  .scroll-slide-right {
+    animation: none !important;
+    transition: none !important;
+  }
+}
