@@ -1,6 +1,6 @@
 'use client';
 
-import { useState, useContext, useEffect } from 'react';
+import { useState, useContext, useEffect, useRef } from 'react';
 import { ThemeContext } from '../contexts/ThemeContext';
 import { I18nContext } from '../contexts/I18nContext';
 
@@ -9,6 +9,7 @@ export default function Navigation() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const { theme, toggleTheme } = useContext(ThemeContext);
   const { lang, setLang, t } = useContext(I18nContext);
+  const navRef = useRef<HTMLElement>(null);
 
   useEffect(() => {
     const ids = ['inicio', 'sobre-mi', 'proyectos', 'testimonios', 'educacion', 'contacto'];
@@ -46,6 +47,23 @@ export default function Navigation() {
     };
   }, [t]);
 
+  // Cerrar menú móvil al hacer click fuera
+  useEffect(() => {
+    const handleClickOutside = (event: MouseEvent) => {
+      if (mobileMenuOpen && navRef.current && !navRef.current.contains(event.target as Node)) {
+        setMobileMenuOpen(false);
+      }
+    };
+
+    if (mobileMenuOpen) {
+      document.addEventListener('mousedown', handleClickOutside);
+    }
+
+    return () => {
+      document.removeEventListener('mousedown', handleClickOutside);
+    };
+  }, [mobileMenuOpen]);
+
   const navItems = [
     { name: t('nav.home'), href: '#inicio' },
     { name: t('nav.about'), href: '#sobre-mi' },
@@ -56,7 +74,7 @@ export default function Navigation() {
   ];
 
   return (
-    <nav className="fixed top-0 left-0 right-0 z-40 backdrop-blur-md" style={{
+    <nav ref={navRef} className="fixed top-0 left-0 right-0 z-40 backdrop-blur-md" style={{
       background: 'var(--nav-bg)',
       borderBottom: '1px solid var(--surface-border)',
       boxShadow: '0 2px 30px rgba(234, 88, 12, 0.25)'

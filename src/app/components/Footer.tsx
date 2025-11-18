@@ -19,7 +19,7 @@ export default function Footer() {
               boxShadow: '0 0 10px var(--accent)'
             }}></div>
             <p className={`text-sm font-mono ${theme === 'light' ? 'text-gray-700' : 'text-gray-400'}`}>
-              Desarrollado con Next.js & React
+              Desarrollado con Next.js
             </p>
           </div>
         </div>

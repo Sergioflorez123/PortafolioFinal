@@ -210,12 +210,12 @@ export default function Testimonials() {
           </h2>
         </ScrollAnimation>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
           {testimonials.map((testimonial, index) => (
             <ScrollAnimation key={index} animationType="fade-in-up" delay={index * 150}>
             <div 
               key={index}
-              className="rounded-lg p-6 backdrop-blur-sm transition-all duration-300 hover:scale-[1.02] hover:shadow-2xl" 
+              className="rounded-lg p-6 backdrop-blur-sm transition-all duration-300 hover:scale-[1.02] hover:shadow-2xl flex flex-col h-full" 
               style={{ 
                 background: 'var(--surface)', 
                 border: '1px solid var(--surface-border)',
@@ -223,19 +223,19 @@ export default function Testimonials() {
               }}
             >
               {/* Avatar 3D centrado arriba */}
-              <div className="flex justify-center mb-4">
+              <div className="flex justify-center mb-5">
                 <Avatar3D type={testimonial.avatarType} />
               </div>
               
               {/* Contenido del testimonio */}
-              <div className="text-center mb-6">
+              <div className="text-center mb-6 flex-grow flex flex-col justify-center">
                 <p className="text-sm leading-relaxed italic" style={{ color: 'var(--foreground)' }}>
                   "{testimonial.quote}"
                 </p>
               </div>
               
               {/* Nombre del cliente */}
-              <div className={`border-t text-center ${testimonial.avatarType === 'santiago' ? 'pt-5' : 'pt-4'}`} style={{ borderColor: 'var(--surface-border)' }}>
+              <div className="border-t text-center pt-4 mt-auto" style={{ borderColor: 'var(--surface-border)' }}>
                 <p className="font-semibold text-base font-mono" style={{ color: 'var(--accent)' }}>
                   {testimonial.client.replace('— ', '')}
                 </p>
