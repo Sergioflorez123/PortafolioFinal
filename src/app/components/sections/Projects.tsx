@@ -33,13 +33,13 @@ export default function Projects() {
              <div className="group rounded-lg overflow-hidden backdrop-blur-sm transition-all duration-300 hover:scale-[1.02] hover:shadow-2xl flex flex-col h-full" 
                style={{ 
                  background: theme === 'light' 
-                   ? 'linear-gradient(135deg, rgba(255, 255, 255, 0.95) 0%, rgba(255, 251, 235, 0.9) 100%)' 
+                   ? 'rgba(255, 255, 255, 1)' 
                    : 'var(--surface)', 
                  border: theme === 'light' 
-                   ? '1px solid rgba(245, 158, 11, 0.3)' 
+                   ? '2px solid rgba(245, 158, 11, 0.5)' 
                    : '1px solid var(--surface-border)',
                  boxShadow: theme === 'light' 
-                   ? '0 4px 24px rgba(245, 158, 11, 0.18), 0 2px 8px rgba(0, 0, 0, 0.1)' 
+                   ? '0 6px 28px rgba(245, 158, 11, 0.3), 0 2px 10px rgba(0, 0, 0, 0.12)' 
                    : '0 4px 20px rgba(0, 0, 0, 0.1)'
                }}>
                {/* Imagen de portada */}
@@ -125,13 +125,13 @@ export default function Projects() {
              <div className="group rounded-lg overflow-hidden backdrop-blur-sm transition-all duration-300 hover:scale-[1.02] hover:shadow-2xl flex flex-col h-full" 
                style={{ 
                  background: theme === 'light' 
-                   ? 'linear-gradient(135deg, rgba(255, 255, 255, 0.95) 0%, rgba(255, 251, 235, 0.9) 100%)' 
+                   ? 'rgba(255, 255, 255, 1)' 
                    : 'var(--surface)', 
                  border: theme === 'light' 
-                   ? '1px solid rgba(245, 158, 11, 0.3)' 
+                   ? '2px solid rgba(245, 158, 11, 0.5)' 
                    : '1px solid var(--surface-border)',
                  boxShadow: theme === 'light' 
-                   ? '0 4px 24px rgba(245, 158, 11, 0.18), 0 2px 8px rgba(0, 0, 0, 0.1)' 
+                   ? '0 6px 28px rgba(245, 158, 11, 0.3), 0 2px 10px rgba(0, 0, 0, 0.12)' 
                    : '0 4px 20px rgba(0, 0, 0, 0.1)'
                }}>
                {/* Imagen de portada */}
@@ -217,13 +217,13 @@ export default function Projects() {
              <div className="group rounded-lg overflow-hidden backdrop-blur-sm transition-all duration-300 hover:scale-[1.02] hover:shadow-2xl flex flex-col h-full" 
                style={{ 
                  background: theme === 'light' 
-                   ? 'linear-gradient(135deg, rgba(255, 255, 255, 0.95) 0%, rgba(255, 251, 235, 0.9) 100%)' 
+                   ? 'rgba(255, 255, 255, 1)' 
                    : 'var(--surface)', 
                  border: theme === 'light' 
-                   ? '1px solid rgba(245, 158, 11, 0.3)' 
+                   ? '2px solid rgba(245, 158, 11, 0.5)' 
                    : '1px solid var(--surface-border)',
                  boxShadow: theme === 'light' 
-                   ? '0 4px 24px rgba(245, 158, 11, 0.18), 0 2px 8px rgba(0, 0, 0, 0.1)' 
+                   ? '0 6px 28px rgba(245, 158, 11, 0.3), 0 2px 10px rgba(0, 0, 0, 0.12)' 
                    : '0 4px 20px rgba(0, 0, 0, 0.1)'
                }}>
                {/* Imagen de portada */}

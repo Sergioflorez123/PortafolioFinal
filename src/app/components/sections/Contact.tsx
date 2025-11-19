@@ -32,13 +32,13 @@ export default function Contact() {
             <div className="space-y-4">
               <div className="rounded-lg p-4 backdrop-blur-sm" style={{ 
                 background: theme === 'light' 
-                  ? 'linear-gradient(135deg, rgba(255, 255, 255, 0.95) 0%, rgba(255, 251, 235, 0.9) 100%)' 
+                  ? 'rgba(255, 255, 255, 1)' 
                   : 'var(--surface)', 
                 border: theme === 'light' 
-                  ? '1px solid rgba(245, 158, 11, 0.3)' 
+                  ? '2px solid rgba(245, 158, 11, 0.5)' 
                   : '1px solid var(--surface-border)',
                 boxShadow: theme === 'light' 
-                  ? '0 2px 12px rgba(245, 158, 11, 0.15), 0 1px 3px rgba(0, 0, 0, 0.08)' 
+                  ? '0 4px 16px rgba(245, 158, 11, 0.25), 0 2px 8px rgba(0, 0, 0, 0.1)' 
                   : 'none'
               }}>
                 <p className="text-lg font-semibold" style={{ color: 'var(--foreground)' }}>Sergio Flórez</p>
@@ -49,10 +49,13 @@ export default function Contact() {
                   : '1px solid var(--surface-border)', 
                 color: 'var(--accent)',
                 background: theme === 'light' 
-                  ? 'linear-gradient(135deg, rgba(255, 255, 255, 0.9) 0%, rgba(255, 251, 235, 0.85) 100%)' 
+                  ? 'rgba(255, 255, 255, 1)' 
                   : 'transparent',
+                border: theme === 'light' 
+                  ? '2px solid rgba(245, 158, 11, 0.5)' 
+                  : '1px solid var(--surface-border)',
                 boxShadow: theme === 'light' 
-                  ? '0 2px 8px rgba(245, 158, 11, 0.12), 0 1px 3px rgba(0, 0, 0, 0.08)' 
+                  ? '0 4px 16px rgba(245, 158, 11, 0.25), 0 2px 8px rgba(0, 0, 0, 0.1)' 
                   : 'none'
               }}>sergioflorez043@gmail.com</a>
               <a href="https://github.com/Sergioflorez123" target="_blank" rel="noopener noreferrer" className="block rounded-lg p-4 transition hover:scale-[1.02]" style={{ 
@@ -61,10 +64,13 @@ export default function Contact() {
                   : '1px solid var(--surface-border)', 
                 color: 'var(--accent)',
                 background: theme === 'light' 
-                  ? 'linear-gradient(135deg, rgba(255, 255, 255, 0.9) 0%, rgba(255, 251, 235, 0.85) 100%)' 
+                  ? 'rgba(255, 255, 255, 1)' 
                   : 'transparent',
+                border: theme === 'light' 
+                  ? '2px solid rgba(245, 158, 11, 0.5)' 
+                  : '1px solid var(--surface-border)',
                 boxShadow: theme === 'light' 
-                  ? '0 2px 8px rgba(245, 158, 11, 0.12), 0 1px 3px rgba(0, 0, 0, 0.08)' 
+                  ? '0 4px 16px rgba(245, 158, 11, 0.25), 0 2px 8px rgba(0, 0, 0, 0.1)' 
                   : 'none'
               }}>GitHub</a>
               <a href="https://www.linkedin.com/in/sergio-a-florez-florez-2919b8366/" target="_blank" rel="noopener noreferrer" className="block rounded-lg p-4 transition hover:scale-[1.02]" style={{ 
@@ -73,10 +79,13 @@ export default function Contact() {
                   : '1px solid var(--surface-border)', 
                 color: 'var(--accent)',
                 background: theme === 'light' 
-                  ? 'linear-gradient(135deg, rgba(255, 255, 255, 0.9) 0%, rgba(255, 251, 235, 0.85) 100%)' 
+                  ? 'rgba(255, 255, 255, 1)' 
                   : 'transparent',
+                border: theme === 'light' 
+                  ? '2px solid rgba(245, 158, 11, 0.5)' 
+                  : '1px solid var(--surface-border)',
                 boxShadow: theme === 'light' 
-                  ? '0 2px 8px rgba(245, 158, 11, 0.12), 0 1px 3px rgba(0, 0, 0, 0.08)' 
+                  ? '0 4px 16px rgba(245, 158, 11, 0.25), 0 2px 8px rgba(0, 0, 0, 0.1)' 
                   : 'none'
               }}>LinkedIn</a>
             </div>

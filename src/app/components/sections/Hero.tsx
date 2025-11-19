@@ -134,7 +134,7 @@ export default function Hero() {
                 href="https://www.instagram.com/sergio_florez_a/" 
                 target="_blank" 
                 rel="noopener noreferrer"
-                className="group relative flex items-center justify-center w-14 h-14 rounded-lg bg-gradient-to-br from-pink-600 via-purple-600 to-orange-500 hover:from-pink-500 hover:to-purple-500 transition-transform duration-300 hover:translate-y-[-3px] hover:scale-105"
+                className="group relative flex items-center justify-center w-12 h-12 sm:w-14 sm:h-14 rounded-lg bg-gradient-to-br from-pink-600 via-purple-600 to-orange-500 hover:from-pink-500 hover:to-purple-500 transition-transform duration-300 hover:translate-y-[-3px] hover:scale-105"
                 style={{
                   boxShadow: '0 0 15px rgba(236, 72, 153, 0.5)'
                 }}

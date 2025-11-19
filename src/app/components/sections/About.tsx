@@ -153,13 +153,13 @@ export default function About() {
                 }`}
                 style={{
                   background: theme === 'light' 
-                    ? 'linear-gradient(135deg, rgba(255, 255, 255, 0.95) 0%, rgba(255, 251, 235, 0.9) 100%)' 
+                    ? 'rgba(255, 255, 255, 1)' 
                     : 'rgba(255, 255, 255, 0.05)',
                   border: theme === 'light' 
-                    ? '1px solid rgba(245, 158, 11, 0.25)' 
+                    ? '2px solid rgba(245, 158, 11, 0.5)' 
                     : '1px solid rgba(255, 255, 255, 0.1)',
                   boxShadow: theme === 'light' 
-                    ? '0 2px 12px rgba(245, 158, 11, 0.15), 0 1px 3px rgba(0, 0, 0, 0.08)' 
+                    ? '0 4px 16px rgba(245, 158, 11, 0.25), 0 2px 8px rgba(0, 0, 0, 0.1)' 
                     : '0 2px 8px rgba(0, 0, 0, 0.3)'
                 }}
                 title={skill.name}
