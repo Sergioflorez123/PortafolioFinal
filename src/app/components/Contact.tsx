@@ -9,10 +9,10 @@ export default function Contact() {
   const { t } = useContext(I18nContext);
   const { theme } = useContext(ThemeContext);
    return (
-     <section id="contacto" className="py-32 px-6 lg:px-8 relative">
+     <section id="contacto" className="py-20 sm:py-32 px-4 sm:px-6 lg:px-8 relative">
        <div className="max-w-7xl mx-auto">
         <ScrollAnimation animationType="fade-in-up">
-          <h2 className="text-4xl font-bold font-mono uppercase tracking-wider mb-12" style={{
+          <h2 className="text-3xl sm:text-4xl font-bold font-mono uppercase tracking-wider mb-8 sm:mb-12" style={{
             color: theme === 'light' ? '#0a0a0a' : '#ffffff',
             textShadow: theme === 'light' 
               ? '0 0 10px rgba(245, 158, 11, 0.3), 0 0 20px rgba(234, 88, 12, 0.2)'
@@ -28,8 +28,8 @@ export default function Contact() {
                 <p className="text-lg font-semibold" style={{ color: 'var(--foreground)' }}>Sergio Flórez</p>
               </div>
               <a href="mailto:sergioflorez043@gmail.com" className="block rounded-lg p-4 transition" style={{ border: '1px solid var(--surface-border)', color: 'var(--accent)' }}>sergioflorez043@gmail.com</a>
-              <a href="https://github.com/sergioflorez" target="_blank" rel="noopener noreferrer" className="block rounded-lg p-4 transition" style={{ border: '1px solid var(--surface-border)', color: 'var(--accent)' }}>GitHub</a>
-              <a href="https://www.linkedin.com/in/sergioflorez" target="_blank" rel="noopener noreferrer" className="block rounded-lg p-4 transition" style={{ border: '1px solid var(--surface-border)', color: 'var(--accent)' }}>LinkedIn</a>
+              <a href="https://github.com/Sergioflorez123" target="_blank" rel="noopener noreferrer" className="block rounded-lg p-4 transition" style={{ border: '1px solid var(--surface-border)', color: 'var(--accent)' }}>GitHub</a>
+              <a href="https://www.linkedin.com/in/sergio-a-florez-florez-2919b8366" target="_blank" rel="noopener noreferrer" className="block rounded-lg p-4 transition" style={{ border: '1px solid var(--surface-border)', color: 'var(--accent)' }}>LinkedIn</a>
             </div>
           </ScrollAnimation>
         </div>
