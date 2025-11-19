@@ -14,22 +14,31 @@
    toggleTheme: () => {},
  });
  
- export function ThemeProvider({ children }: { children: React.ReactNode }) {
-   const [theme, setTheme] = useState<Theme>('dark');
- 
-   useEffect(() => {
-     const stored = typeof window !== 'undefined' ? (localStorage.getItem('theme') as Theme | null) : null;
-     if (stored) setTheme(stored);
-   }, []);
- 
-   useEffect(() => {
-     if (typeof document !== 'undefined') {
-       document.documentElement.setAttribute('data-theme', theme);
-       localStorage.setItem('theme', theme);
-     }
-   }, [theme]);
- 
-   const toggleTheme = () => setTheme((t) => (t === 'dark' ? 'light' : 'dark'));
+export function ThemeProvider({ children }: { children: React.ReactNode }) {
+  const [theme, setTheme] = useState<Theme>('dark');
+
+  useEffect(() => {
+    if (typeof window === 'undefined') return;
+
+    const mediaQuery = window.matchMedia('(prefers-color-scheme: dark)');
+    const applySystemTheme = () => {
+      setTheme(mediaQuery.matches ? 'dark' : 'light');
+    };
+
+    applySystemTheme();
+    mediaQuery.addEventListener('change', applySystemTheme);
+
+    return () => mediaQuery.removeEventListener('change', applySystemTheme);
+  }, []);
+
+  useEffect(() => {
+    if (typeof document !== 'undefined') {
+      document.documentElement.setAttribute('data-theme', theme);
+    }
+  }, [theme]);
+
+  const toggleTheme = () =>
+    setTheme((t) => (t === 'dark' ? 'light' : 'dark'));
  
    const value = useMemo(() => ({ theme, toggleTheme }), [theme]);
  
