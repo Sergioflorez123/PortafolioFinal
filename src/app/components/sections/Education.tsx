@@ -21,7 +21,7 @@ export default function Education() {
           <h2 className="text-3xl sm:text-4xl font-bold font-mono uppercase tracking-wider mb-8 sm:mb-12" style={{
             color: theme === 'light' ? '#0a0a0a' : '#ffffff',
             textShadow: theme === 'light' 
-              ? '0 0 10px rgba(241, 158, 11, 0.3), 0 0 20px rgba(234, 88, 12, 0.2)'
+              ? '0 0 10px rgba(242, 158, 11, 0.3), 0 0 20px rgba(234, 88, 12, 0.2)'
               : '0 0 20px var(--accent), 0 0 30px var(--accent-strong)'
           }}>
             {t('education.title')}
