@@ -124,7 +124,7 @@ export default function About() {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 sm:gap-16 lg:items-start">
           {/* Left side - About text */}
           <ScrollAnimation animationType="slide-left" className="space-y-6">
-            <div className="text-base sm:text-lg leading-relaxed space-y-4" style={{ color: 'var(--foreground)' }}>
+            <div className="text-base sm:text-lg leading-relaxed space-y-4 pb-8 sm:pb-0" style={{ color: 'var(--foreground)' }}>
               {t('about.text').split('\n\n').map((paragraph, index) => (
                 <p key={index}>{paragraph}</p>
               ))}
@@ -133,7 +133,7 @@ export default function About() {
 
           {/* Right side - Skills */}
           <ScrollAnimation animationType="slide-right">
-            <h2 className="text-3xl sm:text-4xl font-bold font-mono uppercase tracking-wider -mt-12 sm:-mt-16 md:-mt-20 lg:-mt-24 mb-6 sm:mb-8" style={{
+            <h2 className="text-3xl sm:text-4xl font-bold font-mono uppercase tracking-wider mt-0 sm:-mt-16 md:-mt-20 lg:-mt-24 mb-6 sm:mb-8" style={{
               color: theme === 'light' ? '#0a0a0a' : '#ffffff',
               textShadow: theme === 'light' 
                 ? '0 0 10px rgba(245, 158, 11, 0.3), 0 0 20px rgba(234, 88, 12, 0.2)'

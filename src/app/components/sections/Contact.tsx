@@ -44,9 +44,6 @@ export default function Contact() {
                 <p className="text-lg font-semibold" style={{ color: 'var(--foreground)' }}>Sergio Flórez</p>
               </div>
               <a href="mailto:sergioflorez043@gmail.com" className="block rounded-lg p-4 transition hover:scale-[1.02]" style={{ 
-                border: theme === 'light' 
-                  ? '1px solid rgba(245, 158, 11, 0.3)' 
-                  : '1px solid var(--surface-border)', 
                 color: 'var(--accent)',
                 background: theme === 'light' 
                   ? 'rgba(255, 255, 255, 1)' 
@@ -59,9 +56,6 @@ export default function Contact() {
                   : 'none'
               }}>sergioflorez043@gmail.com</a>
               <a href="https://github.com/Sergioflorez123" target="_blank" rel="noopener noreferrer" className="block rounded-lg p-4 transition hover:scale-[1.02]" style={{ 
-                border: theme === 'light' 
-                  ? '1px solid rgba(245, 158, 11, 0.3)' 
-                  : '1px solid var(--surface-border)', 
                 color: 'var(--accent)',
                 background: theme === 'light' 
                   ? 'rgba(255, 255, 255, 1)' 
@@ -74,9 +68,6 @@ export default function Contact() {
                   : 'none'
               }}>GitHub</a>
               <a href="https://www.linkedin.com/in/sergio-a-florez-florez-2919b8366/" target="_blank" rel="noopener noreferrer" className="block rounded-lg p-4 transition hover:scale-[1.02]" style={{ 
-                border: theme === 'light' 
-                  ? '1px solid rgba(245, 158, 11, 0.3)' 
-                  : '1px solid var(--surface-border)', 
                 color: 'var(--accent)',
                 background: theme === 'light' 
                   ? 'rgba(255, 255, 255, 1)' 
