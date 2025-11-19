@@ -1,5 +1,6 @@
 @import "tailwindcss";
 
+
 :root {
   /* Tema por defecto (se sobreescribe con [data-theme]) */
   --background: radial-gradient(1200px 800px at 80% -10%, rgba(16, 185, 129, 0.08), transparent 60%),

@@ -133,7 +133,7 @@ export default function About() {
 
           {/* Right side - Skills */}
           <ScrollAnimation animationType="slide-right">
-            <h2 className="text-3xl sm:text-4xl font-bold font-mono uppercase tracking-wider -mt-20 sm:-mt-24 mb-6 sm:mb-8" style={{
+            <h2 className="text-3xl sm:text-4xl font-bold font-mono uppercase tracking-wider -mt-12 sm:-mt-16 md:-mt-20 lg:-mt-24 mb-6 sm:mb-8" style={{
               color: theme === 'light' ? '#0a0a0a' : '#ffffff',
               textShadow: theme === 'light' 
                 ? '0 0 10px rgba(245, 158, 11, 0.3), 0 0 20px rgba(234, 88, 12, 0.2)'

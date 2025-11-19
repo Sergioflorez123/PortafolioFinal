@@ -19,6 +19,10 @@ const geistMono = Geist_Mono({
 export const metadata: Metadata = {
   title: "Portafolio",
   description: "Mi portafolio profesional",
+  icons: {
+    icon: '/orange-icon.svg',
+    apple: '/orange-icon.svg',
+  },
 };
 
 export default function RootLayout({
