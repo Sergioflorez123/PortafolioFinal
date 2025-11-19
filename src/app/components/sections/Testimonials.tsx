@@ -1,9 +1,9 @@
 'use client';
 
 import { useContext } from 'react';
-import { I18nContext } from '../contexts/I18nContext';
-import { ThemeContext } from '../contexts/ThemeContext';
-import ScrollAnimation from './ScrollAnimation';
+import { I18nContext } from '../../contexts/I18nContext';
+import { ThemeContext } from '../../contexts/ThemeContext';
+import ScrollAnimation from '../ui/ScrollAnimation';
 
 // Componente de Avatar con imagen real
 function Avatar3D({ type }: { type: 'jesika' | 'santiago' | 'wilson' }) {
@@ -112,8 +112,10 @@ export default function Testimonials() {
               className="rounded-lg p-4 sm:p-6 backdrop-blur-sm transition-all duration-300 hover:scale-[1.02] hover:shadow-2xl flex flex-col h-full" 
               style={{ 
                 background: 'var(--surface)', 
-                border: '1px solid var(--surface-border)',
-                boxShadow: '0 4px 20px rgba(0, 0, 0, 0.2)'
+                border: theme === 'light' ? '1px solid rgba(0, 0, 0, 0.15)' : '1px solid var(--surface-border)',
+                boxShadow: theme === 'light' 
+                  ? '0 4px 20px rgba(0, 0, 0, 0.15)' 
+                  : '0 4px 20px rgba(0, 0, 0, 0.2)'
               }}
             >
               {/* Avatar 3D centrado arriba */}

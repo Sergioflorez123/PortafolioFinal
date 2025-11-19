@@ -1,8 +1,8 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
-import LoadingScreen from "./components/LoadingScreen";
-import ParticlesBackground from "./components/ParticlesBackground";
+import LoadingScreen from "./components/ui/LoadingScreen";
+import ParticlesBackground from "./components/ui/ParticlesBackground";
 import { ThemeProvider } from "./contexts/ThemeContext";
 import { I18nProvider } from "./contexts/I18nContext";
 

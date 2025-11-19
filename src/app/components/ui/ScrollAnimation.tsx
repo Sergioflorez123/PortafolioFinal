@@ -1,7 +1,7 @@
 'use client';
 
 import { ReactNode } from 'react';
-import { useInView } from '../hooks/useInView';
+import { useInView } from '../../hooks/useInView';
 
 interface ScrollAnimationProps {
   children: ReactNode;

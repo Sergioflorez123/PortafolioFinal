@@ -1,9 +1,9 @@
 'use client';
 
 import { useContext } from 'react';
-import { I18nContext } from '../contexts/I18nContext';
-import { ThemeContext } from '../contexts/ThemeContext';
-import ScrollAnimation from './ScrollAnimation';
+import { I18nContext } from '../../contexts/I18nContext';
+import { ThemeContext } from '../../contexts/ThemeContext';
+import ScrollAnimation from '../ui/ScrollAnimation';
 
 export default function Education() {
   const { t } = useContext(I18nContext);

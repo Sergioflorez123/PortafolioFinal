@@ -1,9 +1,9 @@
 'use client';
 
 import { useContext } from 'react';
-import { I18nContext } from '../contexts/I18nContext';
-import { ThemeContext } from '../contexts/ThemeContext';
-import ScrollAnimation from './ScrollAnimation';
+import { I18nContext } from '../../contexts/I18nContext';
+import { ThemeContext } from '../../contexts/ThemeContext';
+import ScrollAnimation from '../ui/ScrollAnimation';
 
 // Componente para renderizar el logo de cada tecnología
 function SkillLogo({ name, theme }: { name: string; theme: 'light' | 'dark' }) {
@@ -25,8 +25,8 @@ function SkillLogo({ name, theme }: { name: string; theme: 'light' | 'dark' }) {
       </svg>
     ),
     JavaScript: (
-      <div className="flex h-full w-full items-center justify-center rounded-lg bg-[#F7DF1E] p-2">
-        <span className="text-2xl sm:text-3xl font-bold text-black">JS</span>
+      <div className="flex h-full w-full items-center justify-center rounded-lg bg-[#F7DF1E] p-1.5">
+        <span className="text-xl sm:text-2xl font-bold text-black">JS</span>
       </div>
     ),
     React: (
@@ -41,7 +41,7 @@ function SkillLogo({ name, theme }: { name: string; theme: 'light' | 'dark' }) {
     ),
     'Next.js': (
       <div className="flex h-full w-full items-center justify-center rounded-full bg-black">
-        <span className="text-2xl sm:text-3xl font-bold text-white">N</span>
+        <span className="text-xl sm:text-2xl font-bold text-white">N</span>
       </div>
     ),
     'Node.js': (
@@ -71,8 +71,8 @@ function SkillLogo({ name, theme }: { name: string; theme: 'light' | 'dark' }) {
       </svg>
     ),
     TypeScript: (
-      <div className="flex h-full w-full items-center justify-center rounded-lg bg-[#3178C6] p-2">
-        <span className="text-2xl sm:text-3xl font-bold text-white">TS</span>
+      <div className="flex h-full w-full items-center justify-center rounded-lg bg-[#3178C6] p-1.5">
+        <span className="text-xl sm:text-2xl font-bold text-white">TS</span>
       </div>
     ),
     GitHub: (
@@ -144,23 +144,23 @@ export default function About() {
                 const SkillCard = (
                   <div
                     key={skill.name}
-                    className={`flex flex-col items-center justify-center gap-3 rounded-2xl p-4 sm:p-6 transition-shadow ${
+                    className={`flex flex-col items-center justify-center gap-2 rounded-xl p-3 sm:p-4 transition-shadow ${
                       skill.url ? 'cursor-pointer hover:shadow-md' : ''
                     }`}
                     style={{
                       background: theme === 'light' ? '#ffffff' : 'rgba(255, 255, 255, 0.05)',
-                      border: theme === 'light' ? '1px solid rgba(0, 0, 0, 0.05)' : '1px solid rgba(255, 255, 255, 0.1)',
+                      border: theme === 'light' ? '1px solid rgba(0, 0, 0, 0.15)' : '1px solid rgba(255, 255, 255, 0.1)',
                       boxShadow: theme === 'light' 
-                        ? '0 1px 3px rgba(0, 0, 0, 0.1)' 
+                        ? '0 2px 8px rgba(0, 0, 0, 0.12)' 
                         : '0 2px 8px rgba(0, 0, 0, 0.3)'
                     }}
                     title={skill.name}
                   >
-                    <div className="flex h-12 w-12 sm:h-16 sm:w-16 items-center justify-center">
+                    <div className="flex h-10 w-10 sm:h-12 sm:w-12 items-center justify-center">
                       <SkillLogo name={skill.name} theme={theme} />
                     </div>
                     <span 
-                      className="text-base sm:text-lg md:text-xl font-semibold text-center"
+                      className="text-sm sm:text-base font-semibold text-center"
                       style={{ 
                         color: theme === 'light' ? '#111827' : '#e5e7eb',
                         letterSpacing: '0.025em'

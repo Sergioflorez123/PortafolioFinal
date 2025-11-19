@@ -1,9 +1,9 @@
 'use client';
 
 import { useContext, useMemo } from 'react';
-import { I18nContext } from '../contexts/I18nContext';
-import { ThemeContext } from '../contexts/ThemeContext';
-import { useTypewriter } from '../hooks/useTypewriter';
+import { I18nContext } from '../../contexts/I18nContext';
+import { ThemeContext } from '../../contexts/ThemeContext';
+import { useTypewriter } from '../../hooks/useTypewriter';
 
 export default function Hero() {
   const { t } = useContext(I18nContext);
@@ -165,7 +165,7 @@ export default function Hero() {
               </a>
 
               <a
-                href="https://www.linkedin.com/in/sergio-a-florez-florez-2919b8366" 
+                href="https://www.linkedin.com/in/sergio-a-florez-florez-2919b8366/" 
                 target="_blank" 
                 rel="noopener noreferrer"
                 className="group relative flex items-center justify-center w-12 h-12 sm:w-14 sm:h-14 rounded-lg bg-gradient-to-br from-blue-600 to-blue-700 hover:from-blue-500 hover:to-blue-600 transition-transform duration-300 hover:translate-y-[-3px] hover:scale-105"

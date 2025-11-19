@@ -1,8 +1,8 @@
 'use client';
 
 import { useState, useContext, useEffect, useRef } from 'react';
-import { ThemeContext } from '../contexts/ThemeContext';
-import { I18nContext } from '../contexts/I18nContext';
+import { ThemeContext } from '../../contexts/ThemeContext';
+import { I18nContext } from '../../contexts/I18nContext';
 
 export default function Navigation() {
   const [activeSection, setActiveSection] = useState('Inicio');

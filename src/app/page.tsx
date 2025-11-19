@@ -1,13 +1,13 @@
-import Navigation from "./components/Navigation";
-import Hero from "./components/Hero";
-import About from "./components/About";
-import Projects from "./components/Projects";
-import Testimonials from "./components/Testimonials";
-import Education from "./components/Education";
-import Contact from "./components/Contact";
-import Footer from "./components/Footer";
-import ScrollToTop from "./components/ScrollToTop";
-import ScrollProgress from "./components/ScrollProgress";
+import Navigation from "./components/layout/Navigation";
+import Hero from "./components/sections/Hero";
+import About from "./components/sections/About";
+import Projects from "./components/sections/Projects";
+import Testimonials from "./components/sections/Testimonials";
+import Education from "./components/sections/Education";
+import Contact from "./components/sections/Contact";
+import Footer from "./components/layout/Footer";
+import ScrollToTop from "./components/ui/ScrollToTop";
+import ScrollProgress from "./components/ui/ScrollProgress";
 
 export default function Home() {
   return (
