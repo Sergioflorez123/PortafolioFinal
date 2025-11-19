@@ -1,6 +1,5 @@
 'use client';
 
-import Image from 'next/image';
 import { useContext } from 'react';
 import { I18nContext } from '../../contexts/I18nContext';
 import { ThemeContext } from '../../contexts/ThemeContext';
@@ -19,29 +18,6 @@ export default function Education() {
        }}></div>
       <div className="max-w-7xl mx-auto relative z-10">
        <ScrollAnimation animationType="fade-in-up">
-          <div className="flex justify-center mb-10">
-            <div
-              className="relative rounded-full overflow-hidden border-4 shadow-xl"
-              style={{
-                width: '220px',
-                height: '220px',
-                borderColor: theme === 'light' ? 'rgba(245,158,11,0.6)' : 'var(--accent)',
-                boxShadow:
-                  theme === 'light'
-                    ? '0 10px 35px rgba(245,158,11,0.35)'
-                    : '0 10px 35px rgba(0,0,0,0.6)',
-              }}
-            >
-              <Image
-                src="/sergio.jpg"
-                alt="Sergio Antonio Florez Salas"
-                fill
-                sizes="(max-width: 640px) 220px, 260px"
-                priority
-                className="object-cover"
-              />
-            </div>
-          </div>
           <h2
             className="text-3xl sm:text-4xl font-bold font-mono uppercase tracking-wider mb-8 sm:mb-12"
             style={{
