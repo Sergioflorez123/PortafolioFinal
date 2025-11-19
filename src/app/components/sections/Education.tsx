@@ -18,7 +18,7 @@ export default function Education() {
        }}></div>
        <div className="max-w-7xl mx-auto relative z-10">
         <ScrollAnimation animationType="fade-in-up">
-          <h2 className="text-4xl font-bold font-mono uppercase tracking-wider mb-12" style={{
+          <h2 className="text-3xl sm:text-4xl font-bold font-mono uppercase tracking-wider mb-8 sm:mb-12" style={{
             color: theme === 'light' ? '#0a0a0a' : '#ffffff',
             textShadow: theme === 'light' 
               ? '0 0 10px rgba(245, 158, 11, 0.3), 0 0 20px rgba(234, 88, 12, 0.2)'
@@ -29,7 +29,7 @@ export default function Education() {
         </ScrollAnimation>
  
          <ScrollAnimation animationType="fade-in-up">
-        <div className="rounded-lg p-8 backdrop-blur-sm" style={{ background: 'var(--surface)', border: '1px solid var(--surface-border)' }}>
+        <div className="rounded-lg p-6 sm:p-8 backdrop-blur-sm" style={{ background: 'var(--surface)', border: '1px solid var(--surface-border)' }}>
            <h3 className="text-xl font-semibold" style={{ color: 'var(--accent)' }}>Ingeniería en Software</h3>
            <p className="mt-1" style={{ color: theme === 'light' ? '#6b7280' : '#9ca3af' }}>Universidad Cooperativa de Colombia | 2025 - Actualidad</p>
           <p className="mt-2" style={{ color: 'var(--foreground)' }}>Estudiante: <span className="font-semibold" style={{ color: 'var(--accent)' }}>Sergio Antonio Florez Salas</span></p>

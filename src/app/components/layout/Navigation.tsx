@@ -176,8 +176,8 @@ export default function Navigation() {
 
         {/* Mobile Menu */}
         {mobileMenuOpen && (
-          <div className="md:hidden py-4 border-t" style={{ borderColor: 'var(--surface-border)' }}>
-            <div className="flex flex-col gap-4">
+          <div className="md:hidden py-4 border-t animate-fade-in" style={{ borderColor: 'var(--surface-border)' }}>
+            <div className="flex flex-col gap-3 px-4">
               {navItems.map((item) => (
                 <a
                   key={item.name}
@@ -186,10 +186,14 @@ export default function Navigation() {
                     setActiveSection(item.name);
                     setMobileMenuOpen(false);
                   }}
-                  className={`text-sm font-medium font-mono uppercase tracking-wider transition-all duration-200 py-2 ${
+                  className={`text-base font-medium font-mono uppercase tracking-wider transition-all duration-200 py-3 px-4 rounded-lg ${
                     activeSection === item.name
-                      ? theme === 'light' ? 'text-amber-600' : 'text-amber-300'
-                      : theme === 'light' ? 'text-gray-900 hover:text-amber-600' : 'text-gray-300 hover:text-amber-300'
+                      ? theme === 'light' 
+                        ? 'text-amber-600 bg-amber-50' 
+                        : 'text-amber-300 bg-amber-900/20'
+                      : theme === 'light' 
+                        ? 'text-gray-900 hover:text-amber-600 hover:bg-amber-50/50' 
+                        : 'text-gray-300 hover:text-amber-300 hover:bg-amber-900/10'
                   }`}
                   style={activeSection === item.name ? {
                     textShadow: theme === 'dark' ? '0 0 15px var(--accent), 0 0 25px var(--accent-strong)' : 'none'
