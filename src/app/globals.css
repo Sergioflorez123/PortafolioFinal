@@ -1,20 +1,5 @@
 @import "tailwindcss";
 
-
-:root {
-  /* Tema por defecto (se sobreescribe con [data-theme]) */
-  --background: radial-gradient(1200px 800px at 80% -10%, rgba(16, 185, 129, 0.08), transparent 60%),
-                radial-gradient(900px 600px at 0% 100%, rgba(20, 184, 166, 0.08), transparent 60%),
-                linear-gradient(180deg, #081012 0%, #050b0c 100%);
-  --foreground: #e6f4f1;
-  /* Colores de acento (naranja neón) */
-  --accent: #f59e0b; /* amber-500 */
-  --accent-strong: #ea580c; /* orange-600 */
-  --surface: rgba(0, 0, 0, 0.4);
-  --surface-border: rgba(245, 158, 11, 0.35);
-  --nav-bg: rgba(0, 0, 0, 0.6);
-}
-
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
@@ -22,49 +7,57 @@
   --font-mono: var(--font-geist-mono);
 }
 
-/* Light/Dark explícitos via data-theme */
-[data-theme="light"] {
-  --background: radial-gradient(1200px 800px at 80% -10%, rgba(245, 158, 11, 0.08), transparent 60%),
-                radial-gradient(900px 600px at 0% 100%, rgba(234, 88, 12, 0.06), transparent 60%),
-                linear-gradient(180deg, #fafaf9 0%, #f5f5f4 50%, #fafaf9 100%);
-  --foreground: #1a1a1a;
-  --surface: rgba(255, 255, 255, 1);
-  --surface-border: rgba(245, 158, 11, 0.5);
-  --nav-bg: rgba(255, 255, 255, 0.95);
-}
-[data-theme="dark"] {
-  --background: radial-gradient(1200px 800px at 80% -10%, rgba(16, 185, 129, 0.10), transparent 60%),
-                radial-gradient(900px 600px at 0% 100%, rgba(20, 184, 166, 0.10), transparent 60%),
-                linear-gradient(180deg, #070e10 0%, #030607 100%);
-  --foreground: #e6f4f1;
-  --surface: rgba(0, 0, 0, 0.4);
-  --surface-border: rgba(245, 158, 11, 0.35);
-  --nav-bg: rgba(0, 0, 0, 0.6);
-}
+@layer base {
+  :root {
+    --background: radial-gradient(1200px 800px at 80% -10%, rgba(16, 185, 129, 0.08), transparent 60%),
+      radial-gradient(900px 600px at 0% 100%, rgba(20, 184, 166, 0.08), transparent 60%),
+      linear-gradient(180deg, #081012 0%, #050b0c 100%);
+    --foreground: #e6f4f1;
+    --accent: #f59e0b;
+    --accent-strong: #ea580c;
+    --surface: rgba(0, 0, 0, 0.4);
+    --surface-border: rgba(245, 158, 11, 0.35);
+    --nav-bg: rgba(0, 0, 0, 0.6);
+  }
 
-html {
-  scroll-behavior: smooth;
-}
+  [data-theme='light'] {
+    --background: radial-gradient(1200px 800px at 80% -10%, rgba(245, 158, 11, 0.08), transparent 60%),
+      radial-gradient(900px 600px at 0% 100%, rgba(234, 88, 12, 0.06), transparent 60%),
+      linear-gradient(180deg, #fafaf9 0%, #f5f5f4 50%, #fafaf9 100%);
+    --foreground: #1a1a1a;
+    --surface: rgba(255, 255, 255, 1);
+    --surface-border: rgba(245, 158, 11, 0.5);
+    --nav-bg: rgba(255, 255, 255, 0.95);
+  }
 
-/* Performance optimizations */
-* {
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
+  [data-theme='dark'] {
+    --background: radial-gradient(1200px 800px at 80% -10%, rgba(16, 185, 129, 0.1), transparent 60%),
+      radial-gradient(900px 600px at 0% 100%, rgba(20, 184, 166, 0.1), transparent 60%),
+      linear-gradient(180deg, #070e10 0%, #030607 100%);
+    --foreground: #e6f4f1;
+    --surface: rgba(0, 0, 0, 0.4);
+    --surface-border: rgba(245, 158, 11, 0.35);
+    --nav-bg: rgba(0, 0, 0, 0.6);
+  }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
-  transform: translateZ(0);
-  -webkit-transform: translateZ(0);
-}
+  html {
+    scroll-behavior: smooth;
+  }
 
-/* Placeholder styles for light/dark theme */
-input::placeholder,
-textarea::placeholder {
-  color: var(--foreground);
-  opacity: 0.5;
+  body {
+    background: var(--background);
+    color: var(--foreground);
+    font-family: var(--font-sans), system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    transform: translateZ(0);
+  }
+
+  input::placeholder,
+  textarea::placeholder {
+    color: var(--foreground);
+    opacity: 0.5;
+  }
 }
 
 @keyframes shimmer {
@@ -77,7 +70,8 @@ textarea::placeholder {
 }
 
 @keyframes glitch {
-  0%, 100% {
+  0%,
+  100% {
     transform: translate(0);
     opacity: 1;
   }
@@ -93,7 +87,9 @@ textarea::placeholder {
   40% {
     transform: translate(2px, -2px);
   }
-  50%, 70%, 90% {
+  50%,
+  70%,
+  90% {
     transform: translate(0);
   }
 }
@@ -120,130 +116,58 @@ textarea::placeholder {
   }
 }
 
-@keyframes fade-in-down {
-  0% {
+@layer utilities {
+  .animate-shimmer {
+    animation: shimmer 2s infinite;
+  }
+
+  .animate-fade-in {
+    animation: fade-in 0.8s ease-out;
+  }
+
+  .scroll-fade-in,
+  .scroll-fade-in-up,
+  .scroll-slide-left,
+  .scroll-slide-right {
     opacity: 0;
-    transform: translateY(-40px);
+    will-change: opacity, transform;
   }
-  100% {
+
+  .scroll-fade-in {
+    transform: translate3d(0, 40px, 0);
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+  }
+
+  .scroll-fade-in-up {
+    transform: translate3d(0, 50px, 0);
+    transition: opacity 0.7s ease-out, transform 0.7s ease-out;
+  }
+
+  .scroll-slide-left {
+    transform: translate3d(-50px, 0, 0);
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+  }
+
+  .scroll-slide-right {
+    transform: translate3d(50px, 0, 0);
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+  }
+
+  .scroll-fade-in.visible,
+  .scroll-fade-in-up.visible,
+  .scroll-slide-left.visible,
+  .scroll-slide-right.visible {
     opacity: 1;
-    transform: translateY(0);
+    transform: translate3d(0, 0, 0);
+    will-change: auto;
   }
-}
-
-@keyframes slide-in-left {
-  0% {
-    opacity: 0;
-    transform: translateX(-40px);
-  }
-  100% {
-    opacity: 1;
-    transform: translateX(0);
-  }
-}
-
-@keyframes slide-in-right {
-  0% {
-    opacity: 0;
-    transform: translateX(40px);
-  }
-  100% {
-    opacity: 1;
-    transform: translateX(0);
-  }
-}
-
-.animate-shimmer {
-  animation: shimmer 2s infinite;
-}
-
-.animate-fade-in {
-  animation: fade-in 0.8s ease-out;
-}
-
-/* Scroll animations - Optimized with will-change and GPU acceleration */
-.scroll-fade-in {
-  opacity: 0;
-  transform: translate3d(0, 40px, 0);
-  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
-  will-change: opacity, transform;
-}
-
-.scroll-fade-in.visible {
-  opacity: 1;
-  transform: translate3d(0, 0, 0);
-  will-change: auto;
-}
-
-.scroll-fade-in-up {
-  opacity: 0;
-  transform: translate3d(0, 50px, 0);
-  transition: opacity 0.7s ease-out, transform 0.7s ease-out;
-  will-change: opacity, transform;
-}
-
-.scroll-fade-in-up.visible {
-  opacity: 1;
-  transform: translate3d(0, 0, 0);
-  will-change: auto;
-}
-
-.scroll-slide-left {
-  opacity: 0;
-  transform: translate3d(-50px, 0, 0);
-  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
-  will-change: opacity, transform;
-}
-
-.scroll-slide-left.visible {
-  opacity: 1;
-  transform: translate3d(0, 0, 0);
-  will-change: auto;
-}
-
-.scroll-slide-right {
-  opacity: 0;
-  transform: translate3d(50px, 0, 0);
-  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
-  will-change: opacity, transform;
-}
-
-.scroll-slide-right.visible {
-  opacity: 1;
-  transform: translate3d(0, 0, 0);
-  will-change: auto;
-}
-
-.keycap-container-3d {
-  width: 100%;
-  aspect-ratio: 1;
-  position: relative;
-  cursor: pointer;
-  transform-style: preserve-3d;
-  backface-visibility: hidden;
-  -webkit-backface-visibility: hidden;
-}
-
-.keycap-top,
-.keycap-right,
-.keycap-left,
-.keycap-bottom,
-.keycap-back {
-  width: 100%;
-  height: 100%;
-  pointer-events: none;
-  backface-visibility: hidden;
-}
-
-.perspective-1000 {
-  perspective: 1000px;
-  transform-style: preserve-3d;
 }
 
 @media (prefers-reduced-motion: reduce) {
   html {
     scroll-behavior: auto !important;
   }
+
   .animate-shimmer,
   .animate-fade-in,
   .animate-pulse,
