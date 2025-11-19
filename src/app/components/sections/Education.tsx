@@ -33,15 +33,19 @@ export default function Education() {
  
          <ScrollAnimation animationType="fade-in-up">
         <div className="rounded-lg p-6 sm:p-8 backdrop-blur-sm" style={{ 
-          background: theme === 'light' ? 'rgba(255, 255, 255, 1)' : 'var(--surface)', 
-          border: theme === 'light' ? '2px solid rgba(245, 158, 11, 0.5)' : '1px solid var(--surface-border)',
-          boxShadow: theme === 'light' 
-            ? '0 6px 28px rgba(245, 158, 11, 0.3), 0 2px 10px rgba(0, 0, 0, 0.12)' 
-            : 'none'
-        }}>
-           <h3 className="text-xl font-semibold" style={{ color: 'var(--accent)' }}>Ingeniería en Software</h3>
-           <p className="mt-1" style={{ color: theme === 'light' ? '#6b7280' : '#9ca3af' }}>Universidad Cooperativa de Colombia | 2025 - Actualidad</p>
-          <p className="mt-2" style={{ color: 'var(--foreground)' }}>Estudiante: <span className="font-semibold" style={{ color: 'var(--accent)' }}>Sergio Antonio Florez Salas</span></p>
+         background: theme === 'light' ? 'rgba(255, 255, 255, 1)' : 'var(--surface)', 
+         border: theme === 'light' ? '2px solid rgba(245, 158, 11, 0.5)' : '1px solid var(--surface-border)',
+         boxShadow: theme === 'light' 
+           ? '0 6px 28px rgba(245, 158, 11, 0.3), 0 2px 10px rgba(0, 0, 0, 0.12)' 
+           : 'none'
+       }}>
+          <h3 className="text-xl font-semibold" style={{ color: 'var(--accent)' }}>{t('education.degree')}</h3>
+          <p className="mt-1" style={{ color: theme === 'light' ? '#6b7280' : '#9ca3af' }}>
+            {t('education.institution')} | {t('education.period')}
+          </p>
+         <p className="mt-2" style={{ color: 'var(--foreground)' }}>
+           {t('education.studentLabel')}: <span className="font-semibold" style={{ color: 'var(--accent)' }}>{t('education.studentName')}</span>
+         </p>
         </div>
         </ScrollAnimation>
       </div>

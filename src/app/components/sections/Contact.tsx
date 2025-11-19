@@ -1,7 +1,7 @@
 'use client';
 
 import { useContext } from 'react';
-import { I18nContext } from '../../contexts/I18nContext';
+import { I18nContext, LINKS } from '../../contexts/I18nContext';
 import { ThemeContext } from '../../contexts/ThemeContext';
 import ScrollAnimation from '../ui/ScrollAnimation';
 
@@ -41,9 +41,9 @@ export default function Contact() {
                   ? '0 4px 16px rgba(245, 158, 11, 0.25), 0 2px 8px rgba(0, 0, 0, 0.1)' 
                   : 'none'
               }}>
-                <p className="text-lg font-semibold" style={{ color: 'var(--foreground)' }}>Sergio Flórez</p>
+                <p className="text-lg font-semibold" style={{ color: 'var(--foreground)' }}>{t('contact.personName')}</p>
               </div>
-              <a href="mailto:sergioflorez043@gmail.com" className="block rounded-lg p-4 transition hover:scale-[1.02]" style={{ 
+              <a href={`mailto:${LINKS.contact.email}`} className="block rounded-lg p-4 transition hover:scale-[1.02]" style={{ 
                 color: 'var(--accent)',
                 background: theme === 'light' 
                   ? 'rgba(255, 255, 255, 1)' 
@@ -54,8 +54,8 @@ export default function Contact() {
                 boxShadow: theme === 'light' 
                   ? '0 4px 16px rgba(245, 158, 11, 0.25), 0 2px 8px rgba(0, 0, 0, 0.1)' 
                   : 'none'
-              }}>sergioflorez043@gmail.com</a>
-              <a href="https://github.com/Sergioflorez123" target="_blank" rel="noopener noreferrer" className="block rounded-lg p-4 transition hover:scale-[1.02]" style={{ 
+              }}>{LINKS.contact.email}</a>
+              <a href={LINKS.social.github} target="_blank" rel="noopener noreferrer" className="block rounded-lg p-4 transition hover:scale-[1.02]" style={{ 
                 color: 'var(--accent)',
                 background: theme === 'light' 
                   ? 'rgba(255, 255, 255, 1)' 
@@ -66,8 +66,8 @@ export default function Contact() {
                 boxShadow: theme === 'light' 
                   ? '0 4px 16px rgba(245, 158, 11, 0.25), 0 2px 8px rgba(0, 0, 0, 0.1)' 
                   : 'none'
-              }}>GitHub</a>
-              <a href="https://www.linkedin.com/in/sergio-a-florez-florez-2919b8366/" target="_blank" rel="noopener noreferrer" className="block rounded-lg p-4 transition hover:scale-[1.02]" style={{ 
+              }}>{t('contact.githubLabel')}</a>
+              <a href={LINKS.social.linkedin} target="_blank" rel="noopener noreferrer" className="block rounded-lg p-4 transition hover:scale-[1.02]" style={{ 
                 color: 'var(--accent)',
                 background: theme === 'light' 
                   ? 'rgba(255, 255, 255, 1)' 
@@ -78,7 +78,7 @@ export default function Contact() {
                 boxShadow: theme === 'light' 
                   ? '0 4px 16px rgba(245, 158, 11, 0.25), 0 2px 8px rgba(0, 0, 0, 0.1)' 
                   : 'none'
-              }}>LinkedIn</a>
+              }}>{t('contact.linkedinLabel')}</a>
             </div>
           </ScrollAnimation>
         </div>

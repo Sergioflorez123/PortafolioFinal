@@ -2,7 +2,7 @@
 
 import Image from 'next/image';
 import { useContext, useMemo } from 'react';
-import { I18nContext } from '../../contexts/I18nContext';
+import { I18nContext, LINKS } from '../../contexts/I18nContext';
 import { ThemeContext } from '../../contexts/ThemeContext';
 import { useTypewriter } from '../../hooks/useTypewriter';
 
@@ -116,7 +116,7 @@ export default function Hero() {
                 <div className="absolute inset-0 bg-amber-400 opacity-50 blur-xl group-hover:opacity-75 transition-opacity"></div>
               </a>
 
-              <a href="/cv.pdf" download className="inline-flex items-center justify-center px-6 sm:px-8 py-3 sm:py-4 text-sm sm:text-base font-semibold font-mono uppercase tracking-wider border-2 rounded-md transition-all duration-300"
+              <a href={LINKS.assets.cv} download className="inline-flex items-center justify-center px-6 sm:px-8 py-3 sm:py-4 text-sm sm:text-base font-semibold font-mono uppercase tracking-wider border-2 rounded-md transition-all duration-300"
                 style={{
                   color: 'var(--accent)',
                   borderColor: 'var(--surface-border)',
@@ -132,7 +132,7 @@ export default function Hero() {
             {/* Social Media Buttons */}
             <div className="flex flex-wrap gap-3 sm:gap-4 pt-4">
               <a
-                href="https://www.instagram.com/sergio_florez_a/" 
+                href={LINKS.social.instagram} 
                 target="_blank" 
                 rel="noopener noreferrer"
                 className="group relative flex items-center justify-center w-12 h-12 sm:w-14 sm:h-14 rounded-lg bg-gradient-to-br from-pink-600 via-purple-600 to-orange-500 hover:from-pink-500 hover:to-purple-500 transition-transform duration-300 hover:translate-y-[-3px] hover:scale-105"
@@ -146,7 +146,7 @@ export default function Hero() {
               </a>
 
               <a
-                href="https://github.com/Sergioflorez123" 
+                href={LINKS.social.github} 
                 target="_blank" 
                 rel="noopener noreferrer"
                 className="group relative flex items-center justify-center w-12 h-12 sm:w-14 sm:h-14 rounded-lg bg-gradient-to-br from-gray-700 to-gray-900 hover:from-gray-600 hover:to-gray-800 transition-transform duration-300 hover:translate-y-[-3px] hover:scale-105"
@@ -160,7 +160,7 @@ export default function Hero() {
               </a>
 
               <a
-                href="https://www.tiktok.com/@sergio.florez.s" 
+                href={LINKS.social.tiktok} 
                 target="_blank" 
                 rel="noopener noreferrer"
                 className="group relative flex items-center justify-center w-12 h-12 sm:w-14 sm:h-14 rounded-lg bg-gradient-to-br from-black to-gray-800 hover:from-gray-900 hover:to-gray-700 transition-transform duration-300 hover:translate-y-[-3px] hover:scale-105"
@@ -174,7 +174,7 @@ export default function Hero() {
               </a>
 
               <a
-                href="https://www.linkedin.com/in/sergio-a-florez-florez-2919b8366/" 
+                href={LINKS.social.linkedin} 
                 target="_blank" 
                 rel="noopener noreferrer"
                 className="group relative flex items-center justify-center w-12 h-12 sm:w-14 sm:h-14 rounded-lg bg-gradient-to-br from-blue-600 to-blue-700 hover:from-blue-500 hover:to-blue-600 transition-transform duration-300 hover:translate-y-[-3px] hover:scale-105"
