@@ -1,5 +1,6 @@
 'use client';
 
+import Image from 'next/image';
 import { useContext, useMemo } from 'react';
 import { I18nContext } from '../../contexts/I18nContext';
 import { ThemeContext } from '../../contexts/ThemeContext';
@@ -210,12 +211,35 @@ export default function Hero() {
               <div className="absolute -inset-2 sm:-inset-3 bg-gradient-to-r from-amber-300 via-orange-400 to-amber-300 rounded-full blur-xl opacity-60 group-hover:opacity-80 transition duration-300"></div>
               
               {/* Círculo interior con borde neon */}
-              <div className="relative w-64 h-64 sm:w-72 sm:h-72 md:w-80 md:h-80 rounded-full overflow-hidden border-4 border-amber-300/60 bg-gradient-to-br from-orange-900 to-amber-900 p-2" style={{
-                boxShadow: '0 0 24px var(--accent), 0 0 36px var(--accent-strong), inset 0 0 24px rgba(245, 158, 11, 0.30)'
-              }}>
-                {/* Placeholder de imagen */}
-                <div className="w-full h-full rounded-full bg-gradient-to-br from-orange-900 via-amber-800 to-orange-950 flex items-center justify-center">
-                  <div className="text-6xl font-bold text-white/40 font-mono">S</div>
+              <div
+                className="relative w-64 h-64 sm:w-72 sm:h-72 md:w-80 md:h-80 rounded-full overflow-hidden border-4 border-amber-300/60 p-2"
+                style={{
+                  boxShadow: '0 0 24px var(--accent), 0 0 36px var(--accent-strong), inset 0 0 24px rgba(245, 158, 11, 0.30)',
+                  background:
+                    theme === 'light'
+                      ? 'radial-gradient(circle at 30% 30%, rgba(251,191,36,0.35), rgba(249,115,22,0.7) 60%, rgba(120,53,15,0.95))'
+                      : 'radial-gradient(circle at 30% 30%, rgba(251,191,36,0.15), rgba(194,65,12,0.55) 55%, rgba(24,24,27,0.95))',
+                }}
+              >
+                <div className="relative w-full h-full rounded-full overflow-hidden">
+                  <Image
+                    src="/sergio.jpg"
+                    alt="Sergio Antonio Florez Salas"
+                    fill
+                    sizes="(max-width: 768px) 18rem, 20rem"
+                    priority
+                    className="object-cover"
+                  />
+                  <div
+                    className="absolute inset-0 rounded-full mix-blend-multiply opacity-50"
+                    style={{
+                      background:
+                        theme === 'light'
+                          ? 'linear-gradient(135deg, rgba(251,191,36,0.45), rgba(249,115,22,0.35))'
+                          : 'linear-gradient(135deg, rgba(234,88,12,0.5), rgba(17,24,39,0.7))',
+                    }}
+                  ></div>
+                  <div className="absolute inset-0 rounded-full border-2 border-white/10 mix-blend-screen"></div>
                 </div>
               </div>
 
