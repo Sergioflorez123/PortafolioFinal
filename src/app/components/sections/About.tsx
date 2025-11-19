@@ -1,13 +1,13 @@
 'use client';
 
-import { useContext } from 'react';
+import { useContext, ReactElement } from 'react';
 import { I18nContext } from '../../contexts/I18nContext';
 import { ThemeContext } from '../../contexts/ThemeContext';
 import ScrollAnimation from '../ui/ScrollAnimation';
 
 // Componente para renderizar el logo de cada tecnología
 function SkillLogo({ name, theme }: { name: string; theme: 'light' | 'dark' }) {
-  const logos: Record<string, JSX.Element> = {
+  const logos: Record<string, ReactElement> = {
     HTML: (
       <svg viewBox="0 0 452 520" className="h-full w-full">
         <path fill="#E34F26" d="M41 460L0 0h451l-41 460-185 52" />
@@ -146,20 +146,24 @@ export default function About() {
             <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-4">
               {skills.map((skill) => {
                 const SkillCard = (
-                  <div
-                    key={skill.name}
-                    className={`flex flex-col items-center justify-center gap-2 rounded-xl p-3 sm:p-4 transition-shadow ${
-                      skill.url ? 'cursor-pointer hover:shadow-md' : ''
-                    }`}
-                    style={{
-                      background: theme === 'light' ? '#ffffff' : 'rgba(255, 255, 255, 0.05)',
-                      border: theme === 'light' ? '1px solid rgba(0, 0, 0, 0.15)' : '1px solid rgba(255, 255, 255, 0.1)',
-                      boxShadow: theme === 'light' 
-                        ? '0 2px 8px rgba(0, 0, 0, 0.12)' 
-                        : '0 2px 8px rgba(0, 0, 0, 0.3)'
-                    }}
-                    title={skill.name}
-                  >
+              <div
+                key={skill.name}
+                className={`flex flex-col items-center justify-center gap-2 rounded-xl p-3 sm:p-4 transition-all duration-300 ${
+                  skill.url ? 'cursor-pointer hover:shadow-lg hover:-translate-y-1' : 'hover:shadow-md'
+                }`}
+                style={{
+                  background: theme === 'light' 
+                    ? 'linear-gradient(135deg, rgba(255, 255, 255, 0.95) 0%, rgba(255, 251, 235, 0.9) 100%)' 
+                    : 'rgba(255, 255, 255, 0.05)',
+                  border: theme === 'light' 
+                    ? '1px solid rgba(245, 158, 11, 0.25)' 
+                    : '1px solid rgba(255, 255, 255, 0.1)',
+                  boxShadow: theme === 'light' 
+                    ? '0 2px 12px rgba(245, 158, 11, 0.15), 0 1px 3px rgba(0, 0, 0, 0.08)' 
+                    : '0 2px 8px rgba(0, 0, 0, 0.3)'
+                }}
+                title={skill.name}
+              >
                     <div className="flex h-10 w-10 sm:h-12 sm:w-12 items-center justify-center">
                       <SkillLogo name={skill.name} theme={theme} />
                     </div>

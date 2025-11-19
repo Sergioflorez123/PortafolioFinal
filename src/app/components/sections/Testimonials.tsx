@@ -113,17 +113,21 @@ export default function Testimonials() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 lg:gap-8">
           {testimonials.map((testimonial, index) => (
             <ScrollAnimation key={index} animationType="fade-in-up" delay={index * 150}>
-            <div 
-              key={index}
-              className="rounded-lg p-4 sm:p-6 backdrop-blur-sm transition-all duration-300 hover:scale-[1.02] hover:shadow-2xl flex flex-col h-full" 
-              style={{ 
-                background: 'var(--surface)', 
-                border: theme === 'light' ? '1px solid rgba(0, 0, 0, 0.15)' : '1px solid var(--surface-border)',
-                boxShadow: theme === 'light' 
-                  ? '0 4px 20px rgba(0, 0, 0, 0.15)' 
-                  : '0 4px 20px rgba(0, 0, 0, 0.2)'
-              }}
-            >
+          <div 
+          key={index}
+          className="rounded-lg p-4 sm:p-6 backdrop-blur-sm transition-all duration-300 hover:scale-[1.02] hover:shadow-2xl flex flex-col h-full" 
+          style={{ 
+            background: theme === 'light' 
+              ? 'linear-gradient(135deg, rgba(255, 255, 255, 0.95) 0%, rgba(255, 251, 235, 0.9) 100%)' 
+              : 'var(--surface)', 
+            border: theme === 'light' 
+              ? '1px solid rgba(245, 158, 11, 0.3)' 
+              : '1px solid var(--surface-border)',
+            boxShadow: theme === 'light' 
+              ? '0 4px 24px rgba(245, 158, 11, 0.18), 0 2px 8px rgba(0, 0, 0, 0.1)' 
+              : '0 4px 20px rgba(0, 0, 0, 0.2)'
+          }}
+        >
               {/* Avatar 3D centrado arriba */}
               <div className="flex justify-center mb-4 sm:mb-5">
                 <Avatar3D type={testimonial.avatarType} />

@@ -31,29 +31,53 @@ export default function Contact() {
           <ScrollAnimation animationType="fade-in-up">
             <div className="space-y-4">
               <div className="rounded-lg p-4 backdrop-blur-sm" style={{ 
-                background: 'var(--surface)', 
-                border: theme === 'light' ? '1px solid rgba(0, 0, 0, 0.15)' : '1px solid var(--surface-border)',
-                boxShadow: theme === 'light' ? '0 2px 8px rgba(0, 0, 0, 0.1)' : 'none'
+                background: theme === 'light' 
+                  ? 'linear-gradient(135deg, rgba(255, 255, 255, 0.95) 0%, rgba(255, 251, 235, 0.9) 100%)' 
+                  : 'var(--surface)', 
+                border: theme === 'light' 
+                  ? '1px solid rgba(245, 158, 11, 0.3)' 
+                  : '1px solid var(--surface-border)',
+                boxShadow: theme === 'light' 
+                  ? '0 2px 12px rgba(245, 158, 11, 0.15), 0 1px 3px rgba(0, 0, 0, 0.08)' 
+                  : 'none'
               }}>
                 <p className="text-lg font-semibold" style={{ color: 'var(--foreground)' }}>Sergio Flórez</p>
               </div>
-              <a href="mailto:sergioflorez043@gmail.com" className="block rounded-lg p-4 transition" style={{ 
-                border: theme === 'light' ? '1px solid rgba(0, 0, 0, 0.15)' : '1px solid var(--surface-border)', 
+              <a href="mailto:sergioflorez043@gmail.com" className="block rounded-lg p-4 transition hover:scale-[1.02]" style={{ 
+                border: theme === 'light' 
+                  ? '1px solid rgba(245, 158, 11, 0.3)' 
+                  : '1px solid var(--surface-border)', 
                 color: 'var(--accent)',
-                background: theme === 'light' ? 'rgba(255, 255, 255, 0.5)' : 'transparent',
-                boxShadow: theme === 'light' ? '0 1px 3px rgba(0, 0, 0, 0.08)' : 'none'
+                background: theme === 'light' 
+                  ? 'linear-gradient(135deg, rgba(255, 255, 255, 0.9) 0%, rgba(255, 251, 235, 0.85) 100%)' 
+                  : 'transparent',
+                boxShadow: theme === 'light' 
+                  ? '0 2px 8px rgba(245, 158, 11, 0.12), 0 1px 3px rgba(0, 0, 0, 0.08)' 
+                  : 'none'
               }}>sergioflorez043@gmail.com</a>
-              <a href="https://github.com/Sergioflorez123" target="_blank" rel="noopener noreferrer" className="block rounded-lg p-4 transition" style={{ 
-                border: theme === 'light' ? '1px solid rgba(0, 0, 0, 0.15)' : '1px solid var(--surface-border)', 
+              <a href="https://github.com/Sergioflorez123" target="_blank" rel="noopener noreferrer" className="block rounded-lg p-4 transition hover:scale-[1.02]" style={{ 
+                border: theme === 'light' 
+                  ? '1px solid rgba(245, 158, 11, 0.3)' 
+                  : '1px solid var(--surface-border)', 
                 color: 'var(--accent)',
-                background: theme === 'light' ? 'rgba(255, 255, 255, 0.5)' : 'transparent',
-                boxShadow: theme === 'light' ? '0 1px 3px rgba(0, 0, 0, 0.08)' : 'none'
+                background: theme === 'light' 
+                  ? 'linear-gradient(135deg, rgba(255, 255, 255, 0.9) 0%, rgba(255, 251, 235, 0.85) 100%)' 
+                  : 'transparent',
+                boxShadow: theme === 'light' 
+                  ? '0 2px 8px rgba(245, 158, 11, 0.12), 0 1px 3px rgba(0, 0, 0, 0.08)' 
+                  : 'none'
               }}>GitHub</a>
-              <a href="https://www.linkedin.com/in/sergio-a-florez-florez-2919b8366/" target="_blank" rel="noopener noreferrer" className="block rounded-lg p-4 transition" style={{ 
-                border: theme === 'light' ? '1px solid rgba(0, 0, 0, 0.15)' : '1px solid var(--surface-border)', 
+              <a href="https://www.linkedin.com/in/sergio-a-florez-florez-2919b8366/" target="_blank" rel="noopener noreferrer" className="block rounded-lg p-4 transition hover:scale-[1.02]" style={{ 
+                border: theme === 'light' 
+                  ? '1px solid rgba(245, 158, 11, 0.3)' 
+                  : '1px solid var(--surface-border)', 
                 color: 'var(--accent)',
-                background: theme === 'light' ? 'rgba(255, 255, 255, 0.5)' : 'transparent',
-                boxShadow: theme === 'light' ? '0 1px 3px rgba(0, 0, 0, 0.08)' : 'none'
+                background: theme === 'light' 
+                  ? 'linear-gradient(135deg, rgba(255, 255, 255, 0.9) 0%, rgba(255, 251, 235, 0.85) 100%)' 
+                  : 'transparent',
+                boxShadow: theme === 'light' 
+                  ? '0 2px 8px rgba(245, 158, 11, 0.12), 0 1px 3px rgba(0, 0, 0, 0.08)' 
+                  : 'none'
               }}>LinkedIn</a>
             </div>
           </ScrollAnimation>
