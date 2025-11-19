@@ -92,7 +92,13 @@ export default function Testimonials() {
 
   return (
     <section id="testimonios" className="py-20 sm:py-32 px-4 sm:px-6 lg:px-8 relative">
-      <div className="max-w-7xl mx-auto">
+      {/* Background glow effect */}
+      <div className="absolute inset-0" style={{ 
+        background: theme === 'light' 
+          ? 'linear-gradient(to bottom, transparent, rgba(245,158,11,0.08), transparent)' 
+          : 'linear-gradient(to bottom, transparent, rgba(234,88,12,0.08), transparent)' 
+      }}></div>
+      <div className="max-w-7xl mx-auto relative z-10">
         <ScrollAnimation animationType="fade-in-up">
           <h2 className="text-3xl sm:text-4xl font-bold font-mono uppercase tracking-wider mb-8 sm:mb-12" style={{
             color: theme === 'light' ? '#0a0a0a' : '#ffffff',

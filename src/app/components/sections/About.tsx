@@ -104,7 +104,11 @@ export default function About() {
   return (
     <section id="sobre-mi" className="py-20 sm:py-32 px-4 sm:px-6 lg:px-8 relative">
       {/* Background glow effect */}
-      <div className="absolute inset-0" style={{ background: 'linear-gradient(to bottom, transparent, rgba(234,88,12,0.08), transparent)' }}></div>
+      <div className="absolute inset-0" style={{ 
+        background: theme === 'light' 
+          ? 'linear-gradient(to bottom, transparent, rgba(245,158,11,0.12), transparent)' 
+          : 'linear-gradient(to bottom, transparent, rgba(234,88,12,0.08), transparent)' 
+      }}></div>
 
       <div className="max-w-7xl mx-auto">
         <ScrollAnimation animationType="fade-in-up">

@@ -40,8 +40,16 @@ export default function Hero() {
     <section id="inicio" className="pt-24 sm:pt-32 pb-16 sm:pb-20 px-4 sm:px-6 lg:px-8 relative">
       {/* Rejilla neon en tonos naranja */}
       <div className="absolute inset-0 opacity-10" style={{
-        backgroundImage: 'linear-gradient(rgba(245, 158, 11, 0.18) 1px, transparent 1px), linear-gradient(90deg, rgba(234, 88, 12, 0.18) 1px, transparent 1px)',
+        backgroundImage: theme === 'light' 
+          ? 'linear-gradient(rgba(245, 158, 11, 0.12) 1px, transparent 1px), linear-gradient(90deg, rgba(234, 88, 12, 0.12) 1px, transparent 1px)'
+          : 'linear-gradient(rgba(245, 158, 11, 0.18) 1px, transparent 1px), linear-gradient(90deg, rgba(234, 88, 12, 0.18) 1px, transparent 1px)',
         backgroundSize: '50px 50px'
+      }}></div>
+      {/* Background glow effect */}
+      <div className="absolute inset-0" style={{ 
+        background: theme === 'light' 
+          ? 'radial-gradient(ellipse at top, rgba(245,158,11,0.15), transparent 70%)' 
+          : 'radial-gradient(ellipse at top, rgba(245,158,11,0.1), transparent 70%)' 
       }}></div>
 
       <div className="max-w-7xl mx-auto relative z-10">

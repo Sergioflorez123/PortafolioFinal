@@ -10,7 +10,13 @@ export default function Projects() {
   const { theme } = useContext(ThemeContext);
    return (
      <section id="proyectos" className="py-32 px-6 lg:px-8 relative">
-       <div className="max-w-7xl mx-auto">
+       {/* Background glow effect */}
+       <div className="absolute inset-0" style={{ 
+         background: theme === 'light' 
+           ? 'linear-gradient(to bottom, transparent, rgba(245,158,11,0.08), transparent)' 
+           : 'linear-gradient(to bottom, transparent, rgba(234,88,12,0.08), transparent)' 
+       }}></div>
+       <div className="max-w-7xl mx-auto relative z-10">
         <ScrollAnimation animationType="fade-in-up">
           <h2 className="text-4xl font-bold font-mono uppercase tracking-wider mb-12" style={{
             color: theme === 'light' ? '#0a0a0a' : '#ffffff',
@@ -33,11 +39,12 @@ export default function Projects() {
                    : '0 4px 20px rgba(0, 0, 0, 0.1)'
                }}>
                {/* Imagen de portada */}
-               <div className="relative w-full h-48 overflow-hidden">
+               <div className="relative w-full h-32 sm:h-36 overflow-hidden rounded-t-lg">
+                 <div className="absolute inset-0 bg-gradient-to-br from-amber-400/20 via-orange-500/20 to-amber-600/20 z-10"></div>
                  <img 
                    src="/ticket.png" 
                    alt="Ticket Boarding Pass"
-                   className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-110"
+                   className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
                    onError={(e) => {
                      const target = e.target as HTMLImageElement;
                      target.style.display = 'none';
@@ -48,6 +55,7 @@ export default function Projects() {
                      }
                    }}
                  />
+                 <div className="absolute inset-0 bg-gradient-to-t from-black/20 via-transparent to-transparent z-10"></div>
                </div>
                <div className="p-6 flex flex-col flex-grow">
                  <div className="flex items-center gap-3 mb-3">
@@ -119,11 +127,12 @@ export default function Projects() {
                    : '0 4px 20px rgba(0, 0, 0, 0.1)'
                }}>
                {/* Imagen de portada */}
-               <div className="relative w-full h-48 overflow-hidden">
+               <div className="relative w-full h-32 sm:h-36 overflow-hidden rounded-t-lg">
+                 <div className="absolute inset-0 bg-gradient-to-br from-blue-400/20 via-indigo-500/20 to-blue-600/20 z-10"></div>
                  <img 
                    src="/paginanoticias.png" 
                    alt="Página de Noticias"
-                   className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-110"
+                   className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
                    onError={(e) => {
                      const target = e.target as HTMLImageElement;
                      target.style.display = 'none';
@@ -134,6 +143,7 @@ export default function Projects() {
                      }
                    }}
                  />
+                 <div className="absolute inset-0 bg-gradient-to-t from-black/20 via-transparent to-transparent z-10"></div>
                </div>
                <div className="p-6 flex flex-col flex-grow">
                  <div className="flex items-center gap-3 mb-3">
@@ -205,11 +215,12 @@ export default function Projects() {
                    : '0 4px 20px rgba(0, 0, 0, 0.1)'
                }}>
                {/* Imagen de portada */}
-               <div className="relative w-full h-48 overflow-hidden">
+               <div className="relative w-full h-32 sm:h-36 overflow-hidden rounded-t-lg">
+                 <div className="absolute inset-0 bg-gradient-to-br from-green-400/20 via-emerald-500/20 to-green-600/20 z-10"></div>
                  <img 
                    src="/calculadora.png" 
                    alt="Calculadora Inteligente"
-                   className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-110"
+                   className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
                    onError={(e) => {
                      const target = e.target as HTMLImageElement;
                      target.style.display = 'none';
@@ -220,6 +231,7 @@ export default function Projects() {
                      }
                    }}
                  />
+                 <div className="absolute inset-0 bg-gradient-to-t from-black/20 via-transparent to-transparent z-10"></div>
                </div>
                <div className="p-6 flex flex-col flex-grow">
                  <div className="flex items-center gap-3 mb-3">
