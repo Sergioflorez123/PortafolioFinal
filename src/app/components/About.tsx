@@ -128,8 +128,8 @@ export default function About() {
           </ScrollAnimation>
 
           {/* Right side - Skills */}
-          <ScrollAnimation animationType="slide-right" className="space-y-6">
-            <h2 className="text-3xl sm:text-4xl font-bold font-mono uppercase tracking-wider -mt-6 sm:-mt-8 mb-6 sm:mb-8" style={{
+          <ScrollAnimation animationType="slide-right">
+            <h2 className="text-3xl sm:text-4xl font-bold font-mono uppercase tracking-wider -mt-20 sm:-mt-24 mb-6 sm:mb-8" style={{
               color: theme === 'light' ? '#0a0a0a' : '#ffffff',
               textShadow: theme === 'light' 
                 ? '0 0 10px rgba(245, 158, 11, 0.3), 0 0 20px rgba(234, 88, 12, 0.2)'
@@ -137,6 +137,7 @@ export default function About() {
             }}>
               {t('about.skills')}
             </h2>
+            <div className="space-y-6">
             
             <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-4">
               {skills.map((skill) => {
@@ -184,6 +185,7 @@ export default function About() {
                   SkillCard
                 );
               })}
+            </div>
             </div>
           </ScrollAnimation>
         </div>
